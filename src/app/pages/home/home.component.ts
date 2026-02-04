@@ -2,11 +2,15 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { PortfolioComponent } from '../portfolio/portfolio.component';
+import { ServicesComponent } from '../services/services.component';
+import { AboutComponent } from '../about/about.component';
+import { CareerComponent } from '../career/career.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule,PortfolioComponent,ServicesComponent,AboutComponent, CareerComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
