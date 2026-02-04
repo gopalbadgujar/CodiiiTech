@@ -1,0 +1,52 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="cols">
+            <div class="col about">
+                <h3>CodiiTech</h3>
+                <p>We build modern web and mobile experiences. Software development • Web design • Mobile apps</p>
+            </div>
+            <div class="col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a routerLink="/services">Web & App Development</a></li>
+                    <li><a routerLink="/services">UI/UX Design</a></li>
+                    <li><a routerLink="/services">Custom Software</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a routerLink="/about">About Us</a></li>
+                    <li><a routerLink="/privacy">Privacy & Policy</a></li>
+                    <li><a routerLink="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col contact">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:hello&#64;codiitech.example">hello&#64;codiitech.example</a></p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <div class="socials">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Email">✉️</a>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Actions -->
+        <div class="footer-actions">
+            <button class="privacy-toggle" (click)="togglePrivacy()">
+                Privacy & Policy
+                <span class="arrow" [class.open]="showPrivacy">⌄</span>
+            </button>
+        </div>
+
+        <!-- Inline Privacy Preview -->
+        <div class="privacy-dropdown" *ngIf="showPrivacy">
+            <app-privacy [isPreview]="true"></app-privacy>
+        </div>
+
+
+        <div class="copyright">© {{ currentYear }} CodiiTech — All rights reserved</div>
+    </div>
+</footer>

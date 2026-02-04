@@ -1,0 +1,30 @@
+.privacy-content {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.privacy-content h4 {
+  margin-top: 1rem;
+  color: white;
+}
+
+.privacy-dropdown {
+  background: #0b122e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+  animation: slideDown 0.25s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: #38bdf8;
+  font-weight: 500;
+}

@@ -1,0 +1,10 @@
+<h2 *ngIf="!isPreview">Privacy & Policy</h2>
+
+<div class="privacy-content">
+  <p>
+    We respect your privacy and protect your personal data...
+  </p>
+
+  <a *ngIf="isPreview" routerLink="/privacy" class="read-more">
+    Read Full Privacy Policy →</a>
+</div>

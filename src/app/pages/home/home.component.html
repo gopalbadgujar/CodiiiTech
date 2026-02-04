@@ -1,0 +1,105 @@
+<section class="hero">
+  <div class="container">
+    <!-- HERO -->
+    <div class="hero-inner">
+      <div class="hero-left">
+        <span class="badge">Digital Product Agency</span>
+
+        <h1>
+          We Design & Build<br />
+          <span>High-Impact Digital Products</span>
+        </h1>
+
+        <p class="lead">
+          Helping startups and businesses grow with strategy, design,
+          and scalable engineering.
+        </p>
+
+        <div class="hero-actions">
+          <a routerLink="/services" class="btn primary">Start Your Project</a>
+          <a routerLink="/portfolio" class="btn ghost">View Portfolio</a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <strong>120+</strong>
+            <span>Projects</span>
+          </div>
+          <div>
+            <strong>7+</strong>
+            <span>Years</span>
+          </div>
+          <div>
+            <strong>35%</strong>
+            <span>Growth Avg</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="hero-right">
+        <img src="/assets/companyLogo_1.png" alt="Company" />
+        <div class="hero-card">
+          <span>Case Study</span>
+          <strong>E-commerce redesign</strong>
+          <p>+35% conversion growth</p>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- FEATURES -->
+    <section class="features">
+      <h2>Why Businesses Choose Us</h2>
+      <div class="features-grid">
+        <article *ngFor="let f of features" class="feature-card">
+          <h3>{{ f.title }}</h3>
+          <p>{{ f.desc }}</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services">
+      <h2>Our Expertise</h2>
+      <div class="services-grid">
+        <article *ngFor="let s of services" class="service-card">
+          <div class="icon">{{ s.icon }}</div>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.desc }}</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio">
+      <h2>Our Work</h2>
+      <div class="portfolio-grid">
+        <div *ngFor="let p of portfolio" class="portfolio-item">
+          <img src="/assets/companyLogo_1.png" alt="Codii Tech Solution company logo" />
+          <div class="overlay">
+            <strong>{{ p.name }}</strong>
+            <span>{{ p.tag }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <h2>What Clients Say</h2>
+      <div class="testimonials-grid">
+        <blockquote *ngFor="let t of testimonials">
+          <p>“{{ t.quote }}”</p>
+          <footer>{{ t.author }}</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <h2>Let’s Build Something Great</h2>
+      <p>Tell us about your idea and we’ll help you launch it.</p>
+      <a routerLink="/contact" class="btn primary">Contact Us</a>
+    </section>
+
+  </div>
+</section>

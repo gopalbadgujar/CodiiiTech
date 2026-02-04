@@ -1,0 +1,42 @@
+<section class="career">
+    <div class="career-container">
+        <h1 class="career-title">Join Our <span>Team</span></h1>
+
+        <!-- Filter Section -->
+        <div class="career-filters">
+            <label>
+                Department:
+                <select [(ngModel)]="selectedDepartment" class="filter-select">
+                    <option value="all">All Departments</option>
+                    <option value="frontend">Frontend</option>
+                    <option value="backend">Backend</option>
+                    <option value="design">Design</option>
+                    <option value="devops">DevOps</option>
+                    <option value="qa">QA</option>
+                    <option value="pm">Project Management</option>
+                </select>
+            </label>
+
+            <label>
+                Location:
+                <select [(ngModel)]="selectedLocation" class="filter-select">
+                    <option value="all">All Locations</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="navi-mumbai">Navi Mumbai</option>
+                    <option value="remote">Remote</option>
+                </select>
+            </label>
+        </div>
+
+
+        <!-- Job Cards Grid -->
+        <div class="career-grid">
+            <article class="job-card" *ngFor="let job of filteredJobs">
+                <h3>{{ job.title }}</h3>
+                <p class="job-info">{{ job.type }} | {{ job.location | titlecase  }}</p>
+                <p>{{ job.description }}</p>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </article>
+        </div>
+    </div>
+</section>

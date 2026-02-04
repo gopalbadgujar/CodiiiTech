@@ -1,0 +1,68 @@
+<section class="contact-wrapper">
+  <div class="contact-container">
+    <!-- Header -->
+    <div class="contact-header">
+      <span class="subtitle">CONTACT US</span>
+      <h1>
+        Get in Touch with <span>CodiiiTech Solutions</span>
+      </h1>
+    </div>
+
+    <!-- Info Row -->
+    <div class="contact-info">
+      <div>
+        <p>
+          Shop 10-A, Q Building Dhruv Darshan Society<br />
+          Near PCCOE College PCMC<br />
+          Nigdi, Pune, Maharashtra 411044
+        </p>
+      </div>
+
+      <div>
+        <a href="mailto:hello&#64;codiiitech.com">
+          hello&#64;codiiitech.com
+        </a>
+      </div>
+
+      <div>
+        <a href="tel:+917020215508">+91 7020215508</a>
+      </div>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <form class="contact-form" (ngSubmit)="submitForm()" #contactForm="ngForm">
+
+        <div class="two-col">
+          <input type="text" name="name" placeholder="Enter your name" [(ngModel)]="form.name" required />
+
+          <input type="email" name="email" placeholder="Enter your email" [(ngModel)]="form.email" required />
+        </div>
+
+        <div class="two-col">
+          <input type="tel" name="mobile" placeholder="Enter your phone" [(ngModel)]="form.mobile" required />
+
+          <input type="text" name="address" placeholder="Enter your website" [(ngModel)]="form.address" />
+        </div>
+
+        <textarea name="message" rows="5" placeholder="Write your message" [(ngModel)]="form.message"
+          required></textarea>
+
+        <button type="submit" [disabled]="contactForm.invalid || loading">
+          {{ loading ? 'Sending...' : 'Send Message' }}
+        </button>
+
+      </form>
+
+      <!-- Map -->
+      <div class="map">
+        <iframe src="https://www.google.com/maps?q=Dhruv%20Darshan%20Nigdi%20Pune&output=embed" loading="lazy"
+          title="CodiiiTech office location on Google Maps">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>

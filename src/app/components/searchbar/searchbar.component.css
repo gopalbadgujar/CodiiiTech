@@ -1,0 +1,33 @@
+:host {
+    display: block
+}
+
+.searchbar {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+}
+
+.searchbar input {
+    padding: 0.6rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #d0d7de;
+    flex: 1
+}
+
+.searchbar button {
+    background: linear-gradient(90deg, #0ea5e9, #7c3aed);
+    border: none;
+    color: white;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer
+}
+
+@media (max-width:600px) {
+    .searchbar {
+        flex-direction: row;
+        gap: 0.4rem
+    }
+}
