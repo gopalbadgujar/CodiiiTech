@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotificationComponent } from './shared/notification/notification.component';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,4 +14,14 @@ import { NotificationComponent } from './shared/notification/notification.compon
 })
 export class AppComponent {
   title = 'CodiiTech';
+
+   constructor(private router: Router) {
+    // Scroll to top on every route change
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+  }
+  
 }

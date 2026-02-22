@@ -1,0 +1,143 @@
+
+/* Full Screen Wrapper */
+.coming-wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at top,#dddfe3,#a1a7be);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Animated Gradient Blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.5;
+  animation: float 12s infinite ease-in-out alternate;
+}
+
+.blob1 {
+  width: 400px;
+  height: 400px;
+  background: #7c3aed;
+  top: -100px;
+  left: -100px;
+}
+
+.blob2 {
+  width: 500px;
+  height: 500px;
+  background: #0ea5e9;
+  bottom: -150px;
+  right: -150px;
+}
+
+.blob3 {
+  width: 300px;
+  height: 300px;
+  background: #9333ea;
+  top: 40%;
+  left: 60%;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(-40px) scale(1); }
+  50% { transform: translateY(40px) scale(1.1); }
+  100% { transform: translateY(-20px) scale(1); }
+}
+
+/* Glass Card */
+.coming-card {
+  position: relative;
+  backdrop-filter: blur(25px);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 60px 70px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+  animation: fadeUp 1s ease;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  color: #041936;
+}
+
+/* Title Gradient Glow */
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg,#7c3aed,#0ea5e9,#9333ea);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s infinite linear;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1.1rem;
+  color: #3e3e3f;
+  margin-bottom: 30px;
+}
+
+/* Divider */
+.divider {
+  height: 2px;
+  width: 80px;
+  margin: 20px auto 30px;
+  background: linear-gradient(90deg,#7c3aed,#0ea5e9);
+  border-radius: 5px;
+}
+
+/* Premium Button */
+.launch-btn {
+  padding: 14px 30px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg,#7c3aed,#0ea5e9);
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(124,58,237,0.4);
+}
+
+.launch-btn:hover {
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: 0 20px 50px rgba(124,58,237,0.6);
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Fade Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .coming-card {
+    padding: 40px 25px;
+  }
+
+  .title {
+    font-size: 2.3rem;
+  }
+}

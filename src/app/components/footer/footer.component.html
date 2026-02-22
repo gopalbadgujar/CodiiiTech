@@ -27,10 +27,25 @@
                 <p>Email: <a href="mailto:hello&#64;codiitech.example">hello&#64;codiitech.example</a></p>
                 <p>Phone: +1 (555) 123-4567</p>
                 <div class="socials">
-                    <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="Twitter">🐦</a>
-                    <a href="#" aria-label="LinkedIn">💼</a>
-                    <a href="#" aria-label="Email">✉️</a>
+
+                    <!-- Instagram -->
+                    <a routerLink="/comming-soon" class="social-icon instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a routerLink="/comming-soon" class="social-icon linkedin" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+
+                    <!-- Email -->
+                    <a routerLink="/comming-soon" class="social-icon email" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+
                 </div>
             </div>
         </div>
@@ -52,7 +67,7 @@
     </div>
 
     <div class="logo">
-        <a routerLink="/">
+        <a routerLink="/" (click)="scrollToTop()">
             <img src="assets/companyLogo_2.png" alt="Company Logo" class="logo-img">
         </a>
     </div>
