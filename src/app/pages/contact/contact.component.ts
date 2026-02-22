@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
@@ -12,6 +13,14 @@ import { FormsModule } from '@angular/forms';
 export class ContactComponent {
 
   loading = false;
+
+  constructor(private title: Title, private meta: Meta) {}
+
+ngOnInit() {
+  this.title.setTitle('Home - Your Brand');
+  this.meta.updateTag({ name: 'description', content: 'Best services in Mumbai' });
+}
+
 
   form = {
     name: '',

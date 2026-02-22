@@ -60,11 +60,21 @@
     <!-- SERVICES -->
     <section class="services">
       <h2>Our Expertise</h2>
+
       <div class="services-grid">
         <article *ngFor="let s of services" class="service-card">
-          <div class="icon">{{ s.icon }}</div>
-          <h3>{{ s.title }}</h3>
-          <p>{{ s.desc }}</p>
+
+          <!-- IMAGE -->
+          <div class="service-image">
+            <img [src]="s.icon" [alt]="s.title">
+          </div>
+
+          <!-- CONTENT -->
+          <div class="service-content">
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.desc }}</p>
+          </div>
+
         </article>
       </div>
     </section>
@@ -72,19 +82,40 @@
     <!-- PORTFOLIO -->
     <section class="portfolio">
       <h2>Our Work</h2>
+
       <div class="portfolio-grid">
+
+        <!-- Existing Portfolio Cards -->
         <div *ngFor="let p of portfolio" class="portfolio-item">
-          <img src="/assets/companyLogo_1.png" alt="Codii Tech Solution company logo" />
+          <img [src]="p.img" [alt]="p.name" />
           <div class="overlay">
             <strong>{{ p.name }}</strong>
             <span>{{ p.tag }}</span>
           </div>
         </div>
+
+        <!-- Premium Plus Card (only if items < 3) -->
+        <div class="portfolio-item add-more-card" *ngIf="portfolio.length < 3">
+
+          <!-- Fake Background Image Style -->
+          <div class="plus-bg">
+            <span class="plus-icon">+</span>
+          </div>
+
+          <!-- SAME OVERLAY STRUCTURE -->
+          <div class="overlay">
+            <strong>More Projects</strong>
+            <span>Coming Soon</span>
+          </div>
+
+        </div>
+
       </div>
     </section>
+    <!-- <p>More Projects Coming Soon</p> -->
 
     <!-- TESTIMONIALS -->
-    <section class="testimonials">
+    <!-- <section class="testimonials">
       <h2>What Clients Say</h2>
       <div class="testimonials-grid">
         <blockquote *ngFor="let t of testimonials">
@@ -92,11 +123,11 @@
           <footer>{{ t.author }}</footer>
         </blockquote>
       </div>
-    </section>
+    </section> -->
 
 
     <!-- ---------------------------------------------------------------------------------------------------------------- -->
-    <app-portfolio></app-portfolio>
+    <!-- <app-portfolio></app-portfolio> -->
     <app-services></app-services>
     <app-about></app-about>
     <app-career></app-career>

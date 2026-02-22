@@ -1,2 +1,6 @@
 /* Minimal styles for portfolio page */
-.portfolio { padding: 2rem; max-width: 900px; margin: 0 auto; }
+.portfolio {
+    padding: 5rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}

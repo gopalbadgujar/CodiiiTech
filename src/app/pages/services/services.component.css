@@ -40,33 +40,87 @@
   align-items: stretch;
 }
 
-/* Service Card */
+/* Service Card - Premium Hover Reveal */
 .service-card {
+  position: relative;
   background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  text-align: left;
-  transition: all 0.3s ease;
+  border-radius: 18px;
+  padding: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.service-card:hover {
-  box-shadow: 0 30px 70px rgba(0,0,0,0.12);
-  border-color: #7c3aed;
-  border: solid 3px #7c3aed;
+/* Inner Wrapper */
+.service-inner {
+  text-align: center;
+  transition: transform 0.4s ease;
 }
 
+/* Heading Always Visible */
 .service-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: #0f172a;
+  margin: 0;
+  transition: 0.4s ease;
+  gap: 2px;
 }
 
+/* Paragraph Hidden Initially */
 .service-card p {
-  color: #475569;
-  line-height: 1.7;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 1rem;
+  transition: all 0.4s ease;
+  color: #fff;
+  line-height: 1.6;
 }
+
+/* Hover Effect */
+.service-card:hover {
+background: linear-gradient(135deg, #141e30, #243b55);
+  color: white;
+  transform: translateY(-10px);
+  box-shadow: 0 30px 70px rgba(124, 58, 237, 0.3);
+}
+
+/* Heading color change */
+.service-card:hover h3 {
+  color: white;
+}
+
+/* Reveal Paragraph Smoothly */
+.service-card:hover p {
+  opacity: 1;
+  max-height: 200px;
+}
+
+/* Premium Glow Border Effect */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(90deg, #7c3aed, #0ea5e9);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
 
 /* Responsive */
 @media (max-width: 1024px) {

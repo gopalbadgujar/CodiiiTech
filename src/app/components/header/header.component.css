@@ -68,9 +68,9 @@
 
 /* container aligns everything */
 .container {
-    max-width: 95%;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 0.2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -96,7 +96,6 @@
 .logo-img {
     height: 56px;
     /* BIG & VISIBLE */
-    width: auto;
     max-width: 220px;
     object-fit: contain;
 }

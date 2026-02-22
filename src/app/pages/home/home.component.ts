@@ -6,6 +6,7 @@ import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { ServicesComponent } from '../services/services.component';
 import { AboutComponent } from '../about/about.component';
 import { CareerComponent } from '../career/career.component';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,16 @@ import { CareerComponent } from '../career/career.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
+
+  constructor(private title: Title, private meta: Meta) {}
+
+ngOnInit() {
+  this.title.setTitle('Home - Your Brand');
+  this.meta.updateTag({ name: 'description', content: 'Best services in Mumbai' });
+}
+
+
   features = [
     { title: 'Fast Development', desc: 'Delivery-focused teams using modern stacks' },
     { title: 'Reliable Engineering', desc: 'Tested, maintainable, scalable systems' },
@@ -22,15 +33,15 @@ export class HomeComponent {
   ];
 
   services = [
-    { title: 'Web Development', desc: 'Custom websites & e-commerce', icon: '/assets/icon-web.svg' },
-    { title: 'Mobile Apps', desc: 'iOS & Android experiences', icon: '/assets/icon-mobile.svg' },
-    { title: 'Product Design', desc: 'Research, UX, UI & prototyping', icon: '/assets/icon-design.svg' }
+    { title: 'Web Development', desc: 'Custom websites & e-commerce', icon: '/assets/images/webdevelopment.jpg' },
+    { title: 'Mobile Apps', desc: 'iOS & Android experiences', icon: '/assets/images/mobileapps2.jpg' },
+    { title: 'Product Design', desc: 'Research, UX, UI & prototyping', icon: '/assets/images/productdesign1.webp' }
   ];
 
   portfolio = [
-    { name: 'Shopify Plus Revamp', tag: 'E-Commerce', img: '/assets/companyLogo_1.png' },
-    { name: 'FinTech Dashboard', tag: 'SaaS', img: '/assets/companyLogo_1.png' },
-    { name: 'Healthcare App', tag: 'Mobile', img: '/assets/companyLogo_1.png' }
+    { name: 'Shopify Plus App', tag: 'E-Commerce', img: '/assets/companyLogo_1.png' },
+    // { name: 'FinTech Dashboard', tag: 'SaaS', img: '/assets/companyLogo_1.png' },
+    // { name: 'Healthcare App', tag: 'Mobile', img: '/assets/companyLogo_1.png' }
   ];
 
   testimonials = [

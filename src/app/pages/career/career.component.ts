@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Title, Meta } from '@angular/platform-browser';
 
 interface Job {
   title: string;
@@ -22,6 +23,12 @@ export class CareerComponent {
   selectedDepartment: string = 'all';
   selectedLocation: string = 'all';
 
+  constructor(private title: Title, private meta: Meta) {}
+
+ngOnInit() {
+  this.title.setTitle('Home - Your Brand');
+  this.meta.updateTag({ name: 'description', content: 'Best services in Mumbai' });
+}
   // Job data
   jobs: Job[] = [
     {
@@ -68,6 +75,11 @@ export class CareerComponent {
     }
   ];
 
+  googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSf8LcOE7wuwC0FRQ6RyTF6lYTGbZf8C4iJYyTGrimqx13PPPA/viewform?usp=publish-editor';
+
+openForm() {
+  window.open(this.googleFormUrl, '_blank');
+}
   // Filter logic
   get filteredJobs(): Job[] {
     return this.jobs.filter(job => {

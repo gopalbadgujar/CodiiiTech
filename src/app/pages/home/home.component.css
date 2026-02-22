@@ -100,6 +100,7 @@
   border-radius: 10px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
+/* ---------------------------------------------------------------------------------------------------------- */
 
 /* SECTIONS */
 section {
@@ -134,8 +135,15 @@ h2 {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
+/* ---------------------------------------------------------------------------------------------------------- */
 
 /* PORTFOLIO */
+.portfolio{
+  background: radial-gradient(circle at top left, #7c3aed11, transparent 40%),
+              radial-gradient(circle at bottom right, #0ea5e911, transparent 40%);
+  padding: 2rem;
+  border-radius: 16px;
+}
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -170,7 +178,43 @@ h2 {
 .portfolio-item:hover .overlay {
   opacity: 1;
 }
+/* PLUS CARD BASE */
+.add-more-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
 
+/* Background area same size as image */
+.plus-bg {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #c3afe6, #42494d);
+  transition: 0.4s ease;
+}
+
+/* Big Plus Icon */
+.plus-icon {
+  font-size: 4rem;
+  color: white;
+  font-weight: 700;
+  transition: 0.4s ease;
+}
+
+/* Hover effects */
+.add-more-card:hover .plus-bg {
+  transform: scale(1.05);
+}
+
+.add-more-card:hover .plus-icon {
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
 /* TESTIMONIALS */
 .testimonials-grid {
   display: grid;
@@ -205,4 +249,55 @@ blockquote {
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ====================================================== */
+.service-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  transition: transform 0.6s ease;
+}
+
+.service-image img:hover {
+    border: 1px solid #7c3aed;
+}
+
+/* Hover Zoom Effect */
+.service-card:hover img {
+  transform: scale(1.08);
+}
+
+.service-content {
+  padding: 1.5rem;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+.service-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-content p {
+  color: #475569;
 }

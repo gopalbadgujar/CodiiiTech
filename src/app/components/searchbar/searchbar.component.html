@@ -1,10 +1,14 @@
-<div class="searchbar">
-  <input
-    type="search"
-    placeholder="Search services, case studies..."
-    [(ngModel)]="query"
-    (keyup.enter)="onSearch()"
-    aria-label="Search"
-  />
-  <button (click)="onSearch()" aria-label="Search button">🔍</button>
+<div class="searchbar-wrapper">
+  <div class="searchbar">
+    <input
+      type="search"
+      placeholder="Search services, case studies..."
+      [(ngModel)]="query"
+      (keyup.enter)="onSearch()"
+      aria-label="Search"
+    />
+    <button (click)="onSearch()" aria-label="Search button">
+      🔍
+    </button>
+  </div>
 </div>

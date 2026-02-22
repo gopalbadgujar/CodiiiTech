@@ -10,7 +10,7 @@
   background:
     radial-gradient(circle at top left, #7c3aed22, transparent 40%),
     radial-gradient(circle at bottom right, #0ea5e922, transparent 40%);
-  padding: 4rem 1rem;
+  padding: 8rem 1rem 4rem 1rem;
 }
 
 /* Container */

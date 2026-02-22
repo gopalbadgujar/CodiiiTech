@@ -28,15 +28,27 @@
             </label>
         </div>
 
+        <!-- No Vacancies Premium Card -->
+<div class="no-vacancy">
+  <div class="no-vacancy-icon">💼</div>
+  <h3>No Vacancies Available Right Now</h3>
+  <p>
+    Thank you for your interest in joining our team. 
+    Currently, we do not have any open positions, 
+    but exciting opportunities will be announced soon.
+  </p>
+<button class="notify-btn" (click)="openForm()">
+  Stay Connected
+</button></div>
 
         <!-- Job Cards Grid -->
-        <div class="career-grid">
+        <!-- <div class="career-grid">
             <article class="job-card" *ngFor="let job of filteredJobs">
                 <h3>{{ job.title }}</h3>
                 <p class="job-info">{{ job.type }} | {{ job.location | titlecase  }}</p>
                 <p>{{ job.description }}</p>
                 <a href="#" class="apply-btn">Apply Now</a>
             </article>
-        </div>
+        </div> -->
     </div>
 </section>
