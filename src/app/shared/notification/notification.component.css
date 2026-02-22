@@ -1,0 +1,126 @@
+.notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 340px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 18px;
+  backdrop-filter: blur(18px);
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 
+      0 15px 35px rgba(0,0,0,0.4),
+      0 0 20px rgba(124,58,237,0.15);
+  color: white;
+  animation: slideIn 0.4s ease;
+  overflow: hidden;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+/* Hover Lift Effect */
+.notification:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+      0 20px 45px rgba(0,0,0,0.5),
+      0 0 25px rgba(124,58,237,0.25);
+}
+
+/* ICON */
+.notif-icon {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTENT */
+.notif-content {
+  flex: 1;
+}
+
+.notif-title {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.notif-message {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  animation: progress 3s linear forwards;
+}
+
+/* TYPES */
+
+.success .notif-icon {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.success .progress-bar {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+}
+
+.error .notif-icon {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.error .progress-bar {
+  background: linear-gradient(90deg, #dc2626, #ef4444);
+}
+
+.info .notif-icon {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.info .progress-bar {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+}
+
+/* Animations */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}

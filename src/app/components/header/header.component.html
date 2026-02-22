@@ -11,8 +11,10 @@
         <app-searchbar (search)="mobileOpen=false"></app-searchbar>
 
         <nav class="nav" [class.open]="mobileOpen">
-            <a routerLink="/" routerLinkActive="active" (click)="mobileOpen=false">Home</a>
-            <a routerLink="/about" routerLinkActive="active" (click)="mobileOpen=false">About Us</a>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                (click)="mobileOpen=false">
+                Home
+            </a> <a routerLink="/about" routerLinkActive="active" (click)="mobileOpen=false">About Us</a>
             <a routerLink="/services" routerLinkActive="active" (click)="mobileOpen=false">Services</a>
             <!-- <a routerLink="/portfolio" routerLinkActive="active" (click)="mobileOpen=false">Portfolio</a> -->
             <a routerLink="/career" routerLinkActive="active" (click)="mobileOpen=false">Career</a>

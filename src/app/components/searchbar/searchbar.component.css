@@ -6,7 +6,8 @@
 /* WRAPPER FOR CENTERING */
 .searchbar-wrapper {
   width: 100%;
-  max-width: 1500px;   /* limits width on big screens */
+  max-width: 1500px;
+  /* limits width on big screens */
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -28,7 +29,8 @@
   font-size: 1rem;
   transition: all 0.3s ease;
   width: 100%;
-  min-width: 0; /* prevents overflow */
+  min-width: 0;
+  /* prevents overflow */
 }
 
 /* INPUT FOCUS EFFECT */
@@ -40,7 +42,8 @@
 
 /* BUTTON */
 .searchbar button {
-  background: linear-gradient(90deg, #0ea5e9, #7c3aed);
+  /* background: linear-gradient(90deg, #0ea5e9, #7c3aed); */
+  background: linear-gradient(135deg, #441693, #0ea5e9);
   border: none;
   color: white;
   padding: 0.75rem 1rem;

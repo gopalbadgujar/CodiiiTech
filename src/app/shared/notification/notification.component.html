@@ -1,0 +1,22 @@
+<div class="notification" *ngIf="visible" [ngClass]="type">
+
+  <div class="notif-icon">
+    <span *ngIf="type==='success'">✔</span>
+    <span *ngIf="type==='error'">✖</span>
+    <span *ngIf="type==='info'">ℹ</span>
+  </div>
+
+  <div class="notif-content">
+    <div class="notif-title">
+      {{ type | titlecase }}
+    </div>
+    <div class="notif-message">
+      {{ message }}
+    </div>
+  </div>
+
+  <button class="close-btn" (click)="visible=false">✕</button>
+
+  <div class="progress-bar"></div>
+
+</div>
