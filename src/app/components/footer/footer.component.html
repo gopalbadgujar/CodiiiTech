@@ -3,7 +3,7 @@
         <div class="cols">
             <div class="col about">
                 <h3>CodiiTech</h3>
-                <p>We build modern web and mobile experiences. Software development • Web design • Mobile apps</p>
+                <p>We build modern web and mobile experiences. Software development, Web design, Mobile apps. </p>
             </div>
             <div class="col">
                 <h4>Services</h4>
@@ -11,6 +11,7 @@
                     <li><a routerLink="/services">Web & App Development</a></li>
                     <li><a routerLink="/services">UI/UX Design</a></li>
                     <li><a routerLink="/services">Custom Software</a></li>
+                    <li><a routerLink="/services">Business Process Outsourcing </a></li>
                 </ul>
             </div>
             <div class="col">
@@ -37,7 +38,7 @@
         <div class="footer-actions">
             <button class="privacy-toggle" (click)="togglePrivacy()">
                 Privacy & Policy
-                <span class="arrow" [class.open]="showPrivacy">⌄</span>
+                <!-- <span class="arrow" [class.open]="showPrivacy"></span> -->
             </button>
         </div>
 
@@ -48,5 +49,11 @@
 
 
         <div class="copyright">© {{ currentYear }} CodiiTech — All rights reserved</div>
+    </div>
+
+    <div class="logo">
+        <a routerLink="/">
+            <img src="assets/companyLogo_2.png" alt="Company Logo" class="logo-img">
+        </a>
     </div>
 </footer>

@@ -1,10 +1,70 @@
-<h2 *ngIf="!isPreview">Privacy & Policy</h2>
+<h2 *ngIf="!isPreview" class="privacy-title">
+  Privacy Policy
+</h2>
 
-<div class="privacy-content">
-  <p>
-    We respect your privacy and protect your personal data...
-  </p>
+<div class="privacy-card">
 
-  <a *ngIf="isPreview" routerLink="/privacy" class="read-more">
-    Read Full Privacy Policy →</a>
+  <div class="privacy-section">
+    <h4>1. Introduction</h4>
+    <p>
+      At CodiiTech, we are committed to protecting your privacy and safeguarding
+      your personal information. This Privacy Policy explains how we collect,
+      use, disclose, and protect your data when you interact with our website
+      and services.
+    </p>
+  </div>
+
+   <!-- Show this only when FULL -->
+  <ng-container *ngIf="!isPreview || showFullPolicy">
+  <div class="privacy-section">
+    <h4>2. Information We Collect</h4>
+    <ul>
+      <li>Personal identification information (Name, email, phone number)</li>
+      <li>Business information submitted through contact forms</li>
+      <li>Technical data such as IP address, browser type, and usage analytics</li>
+    </ul>
+  </div>
+
+  <div class="privacy-section">
+    <h4>3. How We Use Your Information</h4>
+    <ul>
+      <li>To respond to inquiries and provide services</li>
+      <li>To improve website performance and user experience</li>
+      <li>To comply with legal and regulatory requirements</li>
+    </ul>
+  </div>
+
+  <div class="privacy-section">
+    <h4>4. Data Security</h4>
+    <p>
+      We implement industry-standard security measures to protect your
+      information from unauthorized access, alteration, disclosure, or
+      destruction.
+    </p>
+  </div>
+
+  <div class="privacy-section">
+    <h4>5. Third-Party Services</h4>
+    <p>
+      We may use trusted third-party services for analytics and hosting.
+      These providers are obligated to maintain confidentiality and data security.
+    </p>
+  </div>
+
+  <div class="privacy-section">
+    <h4>6. Your Rights</h4>
+    <p>
+      You have the right to access, update, or request deletion of your
+      personal data. Please contact us for any privacy-related concerns.
+    </p>
+  </div>
+</ng-container>
+<!-- Read More Button (ONLY in Preview Mode and NOT expanded) -->
+  <a 
+    *ngIf="isPreview && !showFullPolicy"
+    (click)="expandPolicy()"
+    class="read-more"
+  >
+    Read Full Privacy Policy →
+  </a>
 </div>

@@ -62,9 +62,9 @@
 
 /* Main grid */
 .contact-grid {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 3rem;
+  gap: 3rem; */
 }
 
 /* Form Card */

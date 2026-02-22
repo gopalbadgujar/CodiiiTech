@@ -5,19 +5,25 @@ import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule, RouterModule],
   selector: 'app-privacy',
   templateUrl: './privacy.component.html',
   styleUrls: ['./privacy.component.css']
 })
 export class PrivacyComponent {
-      @Input() isPreview = false;
+  @Input() isPreview = false;
 
-      constructor(private title: Title, private meta: Meta) {}
+  showFullPolicy = false;
 
-ngOnInit() {
-  this.title.setTitle('Home - Your Brand');
-  this.meta.updateTag({ name: 'description', content: 'Best services in Mumbai' });
-}
+  expandPolicy() {
+    this.showFullPolicy = true;
+  }
+
+  constructor(private title: Title, private meta: Meta) { }
+
+  ngOnInit() {
+    this.title.setTitle('Home - Your Brand');
+    this.meta.updateTag({ name: 'description', content: 'Best services in Mumbai' });
+  }
 
 }

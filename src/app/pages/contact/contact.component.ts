@@ -31,38 +31,26 @@ ngOnInit() {
   };
 
   submitForm() {
-    if (this.loading) return;
+  this.loading = true;
 
-    this.loading = true;
+  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScqzlcWaYl8Jnx5o9hrj4NPfXpmunt63VRpNum1Mqyc7_mblg/formResponse';
 
-    fetch(
-      'https://script.google.com/macros/s/AKfycbx8sjwjRx7ix8A8lv_VWX3K-tVw0CPZ3pG3Ol1djWmMWmhefxJqdkHhyMwfnd6caz166w/exec',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(this.form)
-      }
-    )
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
-        }
+  const formData = new FormData();
+  formData.append('entry.1434008827', this.form.name);
+  formData.append('entry.1327517062', this.form.email);
+  formData.append('entry.497248504', this.form.mobile);
+  formData.append('entry.262763108', this.form.address);
+  formData.append('entry.666453298', this.form.message);
 
-        alert('Thank you! We will contact you soon.');
-        this.resetForm();
-      })
-      .catch(error => {
-        console.error('Contact form error:', error);
-        alert('Something went wrong. Please try again.');
-      })
-      .finally(() => {
-        this.loading = false;
-      });
-  }
-
-  private resetForm() {
+  fetch(formUrl, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData
+  }).then(() => {
+    this.loading = false;
+    alert('✅ Thank you for contacting CodiiiTech.!');
+    
+    // Reset form
     this.form = {
       name: '',
       email: '',
@@ -70,5 +58,9 @@ ngOnInit() {
       address: '',
       message: ''
     };
-  }
+  }).catch(() => {
+    this.loading = false;
+    alert('❌ Something went wrong.');
+  });
+}
 }
