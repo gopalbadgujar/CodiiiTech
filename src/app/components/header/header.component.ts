@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { SearchbarComponent } from '../searchbar/searchbar.component';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -12,5 +13,21 @@ import { SearchbarComponent } from '../searchbar/searchbar.component';
 })
 export class HeaderComponent {
   mobileOpen = false;
-  toggle() { this.mobileOpen = !this.mobileOpen }
+
+  constructor(private router: Router) {
+    // Optional: scroll to top on route change automatically
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  toggle() {
+    this.mobileOpen = !this.mobileOpen;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

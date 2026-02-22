@@ -12,13 +12,21 @@
 
         <nav class="nav" [class.open]="mobileOpen">
             <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-                (click)="mobileOpen=false">
+                (click)="mobileOpen=false; scrollToTop()">
                 Home
-            </a> <a routerLink="/about" routerLinkActive="active" (click)="mobileOpen=false">About Us</a>
-            <a routerLink="/services" routerLinkActive="active" (click)="mobileOpen=false">Services</a>
-            <!-- <a routerLink="/portfolio" routerLinkActive="active" (click)="mobileOpen=false">Portfolio</a> -->
-            <a routerLink="/career" routerLinkActive="active" (click)="mobileOpen=false">Career</a>
-            <a routerLink="/contact" routerLinkActive="active" (click)="mobileOpen=false">Contact</a>
+            </a>
+            <a routerLink="/about" routerLinkActive="active" (click)="mobileOpen=false; scrollToTop()">
+                About Us
+            </a>
+            <a routerLink="/services" routerLinkActive="active" (click)="mobileOpen=false; scrollToTop()">
+                Services
+            </a>
+            <a routerLink="/career" routerLinkActive="active" (click)="mobileOpen=false; scrollToTop()">
+                Career
+            </a>
+            <a routerLink="/contact" routerLinkActive="active" (click)="mobileOpen=false; scrollToTop()">
+                Contact
+            </a>
         </nav>
     </div>
 </header>
