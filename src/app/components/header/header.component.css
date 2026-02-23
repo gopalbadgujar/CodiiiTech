@@ -66,6 +66,9 @@
 
 @media (max-width:880px) {
 
+      .mobile-toggle {
+        display: block;   /* 🔥 SHOW BUTTON */
+    }
     .nav {
         position: absolute;
         left: 0;
