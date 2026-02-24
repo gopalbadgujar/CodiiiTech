@@ -7,12 +7,11 @@
         <div class="service-inner">
           <h3>{{ service.title }}</h3>
           <p>{{ service.description }}</p>
-
-          <!-- More Button -->
-          <button class="more-btn" (click)="goToService(service.slug); $event.stopPropagation()">
-            More →
-          </button>
         </div>
+        <!-- More Button -->
+        <button class="more-btn" (click)="goToService(service.slug); $event.stopPropagation()">
+          More →
+        </button>
       </article>
     </div>
   </div>
