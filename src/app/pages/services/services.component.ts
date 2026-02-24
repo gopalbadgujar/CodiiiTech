@@ -35,27 +35,27 @@ export class ServicesComponent {
     },
     {
       title: 'WEB DEVELOPMENT',
-      description: 'Web application development services with highly skilled IT professionals.',
+      description: 'Web application development services with highly skilled IT professionals to build scalable and modern solutions.',
       slug: 'web-development'
     },
     {
       title: 'APPLICATION DEVELOPMENT',
-      description: 'Mobile app solutions customized for your business.',
+      description: 'Mobile app solutions customized for your business. We create future-readymobile experiences.',
       slug: 'application-development'
     },
     {
       title: 'CLOUD COMPUTING',
-      description: 'On-demand availability of computing resources.',
+      description: 'On-demand availability of computing resources, storage, and processing power without direct management.',
       slug: 'cloud-computing'
     },
     {
       title: 'TRAINING AND CONSULTING',
-      description: 'Strategic training programs and expert consulting services.',
+      description: 'We empower businesses with strategic training programs and expert consulting services designed to enhance skills, optimize performance, and drive sustainable growth. Our tailored solutions help organizations adapt to market changes, improve operational efficiency, and achieve long-term success.',
       slug: 'training-consulting'
     },
     {
       title: 'BPO',
-      description: 'Business Process Outsourcing services to streamline operations.',
+      description: 'Our Business Process Outsourcing (BPO) services streamline your operations byefficiently managing IT resources and business processes aligned with your organizational goals. We ensure cost-effective solutions, improved productivity, and seamless support so you can focus on your core business growth.',
       slug: 'bpo'
     }
   ];
