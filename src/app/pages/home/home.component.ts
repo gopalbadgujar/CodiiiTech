@@ -11,32 +11,139 @@ import { Title, Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule,PortfolioComponent,ServicesComponent,AboutComponent, CareerComponent],
+  imports: [CommonModule, RouterModule, FormsModule, PortfolioComponent, ServicesComponent, AboutComponent, CareerComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
 
 
-  constructor(private title: Title, private meta: Meta) {}
+  constructor(private title: Title, private meta: Meta) { }
 
-ngOnInit() {
-  this.title.setTitle('Home - Your Brand');
-  this.meta.updateTag({ name: 'description', content: 'Best services in Mumbai' });
-}
+  ngOnInit() {
+    this.title.setTitle('Home - Your Brand');
+    this.meta.updateTag({ name: 'description', content: 'Best services in Mumbai' });
+  }
 
 
   features = [
-    { title: 'Fast Development', desc: 'Delivery-focused teams using modern stacks' },
-    { title: 'Reliable Engineering', desc: 'Tested, maintainable, scalable systems' },
-    { title: 'Beautiful Design', desc: 'UX-led interfaces that delight users' }
+    {
+      title: 'Fast Development',
+      desc: 'Delivery-focused teams using modern stacks',
+      details: `
+      • Agile sprint execution
+      • CI/CD automation
+      • Modern stack (Angular, Node, Cloud)
+      • Performance optimization
+    `,
+      flow: [
+        'Discovery',
+        'Architecture',
+        'Development',
+        'Testing',
+        'Deployment'
+      ],
+      expanded: false
+    },
+    {
+      title: 'Reliable Engineering',
+      desc: 'Tested, maintainable, scalable systems',
+      details: `
+      • Clean architecture
+      • Automated testing
+      • Code reviews
+      • Monitoring & logging
+    `,
+      flow: [
+        'Design Review',
+        'Code Standards',
+        'QA Automation',
+        'Release'
+      ],
+      expanded: false
+    },
+    {
+      title: 'Beautiful Design',
+      desc: 'UX-led interfaces that delight users',
+      details: `
+      • UX Research
+      • Wireframing
+      • UI Prototyping
+      • User Testing
+    `,
+      flow: [
+        'Research',
+        'Wireframe',
+        'Prototype',
+        'User Testing',
+        'Launch'
+      ],
+      expanded: false
+    }
   ];
 
-  services = [
-    { title: 'Web Development', desc: 'Custom websites & e-commerce', icon: '/assets/images/webdevelopment.jpg' },
-    { title: 'Mobile Apps', desc: 'iOS & Android experiences', icon: '/assets/images/mobileapps2.jpg' },
-    { title: 'Product Design', desc: 'Research, UX, UI & prototyping', icon: '/assets/images/productdesign1.webp' }
-  ];
+  toggleFeature(feature: any) {
+  this.features.forEach(f => {
+    if (f !== feature) f.expanded = false;
+  });
+  feature.expanded = !feature.expanded;
+}
+
+// ----------------------------------------------------------------------------------------------
+
+services = [
+  {
+    title: 'Web Engineering',
+    subtitle: 'Scalable Digital Platforms',
+    desc: 'High-performance websites & enterprise-grade applications.',
+    icon: '/assets/images/webdevelopment.jpg',
+    highlights: [
+      'Angular & React Apps',
+      'Headless CMS',
+      'E-Commerce Architecture',
+      'Performance Optimization'
+    ],
+    tech: ['Angular', 'Node.js', 'AWS'],
+    expanded: false
+  },
+  {
+    title: 'Mobile Innovation',
+    subtitle: 'Cross-Platform Experiences',
+    desc: 'Native-feel iOS & Android applications built for scale.',
+    icon: '/assets/images/mobileapps2.jpg',
+    highlights: [
+      'Flutter & React Native',
+      'App Store Deployment',
+      'Push & Realtime Systems',
+      'Secure API Integration'
+    ],
+    tech: ['Flutter', 'Firebase', 'Swift'],
+    expanded: false
+  },
+  {
+    title: 'Product Design',
+    subtitle: 'UX Strategy & Interface Systems',
+    desc: 'User-first research driven digital design systems.',
+    icon: '/assets/images/productdesign1.webp',
+    highlights: [
+      'UX Research',
+      'Wireframing',
+      'Interactive Prototypes',
+      'Design Systems'
+    ],
+    tech: ['Figma', 'Framer', 'Adobe XD'],
+    expanded: false
+  }
+];
+
+toggleService(service: any) {
+  this.services.forEach(s => {
+    if (s !== service) s.expanded = false;
+  });
+  service.expanded = !service.expanded;
+}
+
+// ----------------------------------------------------------------------------------------------
 
   portfolio = [
     { name: 'Shopify Plus App', tag: 'E-Commerce', img: '/assets/companyLogo_1.png' },

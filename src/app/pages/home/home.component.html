@@ -49,10 +49,36 @@
     <!-- FEATURES -->
     <section class="features">
       <h2>Why Businesses Choose Us</h2>
+
       <div class="features-grid">
-        <article *ngFor="let f of features" class="feature-card">
-          <h3>{{ f.title }}</h3>
-          <p>{{ f.desc }}</p>
+        <article *ngFor="let f of features" class="feature-card" [class.active]="f.expanded" (click)="toggleFeature(f)">
+          <div class="card-inner">
+
+            <div class="feature-header">
+              <h3>{{ f.title }}</h3>
+              <span class="arrow" [class.rotate]="f.expanded">⌄</span>
+            </div>
+
+            <p class="feature-desc">{{ f.desc }}</p>
+
+            <!-- EXPAND AREA -->
+            <div class="feature-extra" [class.show]="f.expanded">
+
+              <div class="feature-details">
+                <h4>What We Do</h4>
+                <p>{{ f.details }}</p>
+              </div>
+
+              <div class="flow">
+                <div class="flow-step" *ngFor="let step of f.flow; let i = index">
+                  <span class="step-index">{{ i + 1 }}</span>
+                  <span>{{ step }}</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
         </article>
       </div>
     </section>
@@ -62,17 +88,34 @@
       <h2>Our Expertise</h2>
 
       <div class="services-grid">
-        <article *ngFor="let s of services" class="service-card">
+        <article *ngFor="let s of services" class="service-card" [class.active]="s.expanded" (click)="toggleService(s)">
 
-          <!-- IMAGE -->
+          <!-- IMAGE AREA -->
           <div class="service-image">
             <img [src]="s.icon" [alt]="s.title">
+            <div class="image-overlay"></div>
           </div>
 
           <!-- CONTENT -->
           <div class="service-content">
             <h3>{{ s.title }}</h3>
+            <span class="subtitle">{{ s.subtitle }}</span>
             <p>{{ s.desc }}</p>
+
+            <!-- EXPAND AREA -->
+            <div class="service-extra" [class.show]="s.expanded">
+
+              <div class="highlights">
+                <div class="highlight" *ngFor="let h of s.highlights">
+                  ✓ {{ h }}
+                </div>
+              </div>
+
+              <div class="tech-stack">
+                <span *ngFor="let t of s.tech">{{ t }}</span>
+              </div>
+
+            </div>
           </div>
 
         </article>

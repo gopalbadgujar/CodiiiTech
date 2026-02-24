@@ -2,7 +2,7 @@
   display: block;
   font-family: Inter, system-ui, sans-serif;
   color: #0f172a;
-}
+} 
 
 /* Section */
 .services {
@@ -121,6 +121,103 @@ background: linear-gradient(135deg, #141e30, #243b55);
   opacity: 1;
 }
 
+
+/* =========================
+   ULTRA PREMIUM MORE BUTTON
+   ========================= */
+
+.more-btn {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: #fff;
+  cursor: pointer;
+
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  transition: all 0.4s ease;
+
+  box-shadow: 0 0 0 rgba(124, 58, 237, 0);
+}
+
+/* Show on hover */
+.service-card:hover .more-btn {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Hover effect */
+.more-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+}
+
+/* Gradient animated border */
+.more-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 30px;
+  background: linear-gradient(
+    120deg,
+    #7c3aed,
+    #0ea5e9,
+    #7c3aed
+  );
+  background-size: 300% 300%;
+  z-index: -1;
+  animation: borderMove 4s linear infinite;
+  opacity: 0.8;
+}
+
+/* Shine sweep animation */
+.more-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-20deg);
+}
+
+/* Shine on hover */
+.more-btn:hover::after {
+  animation: shine 0.8s ease forwards;
+}
+
+/* Keyframes */
+
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
 
 /* Responsive */
 @media (max-width: 1024px) {

@@ -101,40 +101,349 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 /* ---------------------------------------------------------------------------------------------------------- */
+/* ===============================
+   ULTRA PREMIUM FEATURE SECTION
+   =============================== */
 
-/* SECTIONS */
-section {
-  margin-top: 4rem;
+.features {
+  padding: 1rem;
+  position: relative;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+/* Soft background aura */
+.features::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, #7c3aed22, transparent 40%),
+    radial-gradient(circle at 80% 80%, #0ea5e922, transparent 40%);
+  z-index: -1;
 }
 
-/* GRIDS */
-.features-grid,
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  perspective: 1200px;
+}
+
+/* ================= CARD BASE ================= */
+
+.feature-card {
+  position: relative;
+  border-radius: 22px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(.22,1,.36,1);
+}
+
+.card-inner {
+  padding: 2rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: 0.6s cubic-bezier(.22,1,.36,1);
+}
+
+/* Animated gradient border glow */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 24px;
+  background: linear-gradient(120deg,#7c3aed,#0ea5e9,#7c3aed);
+  background-size: 300% 300%;
+  z-index: -1;
+  opacity: 0.7;
+  animation: borderMove 6s linear infinite;
+}
+
+/* Initial soft shadow */
+.feature-card {
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* ================= HOVER STATE ================= */
+
+.feature-card:hover .card-inner {
+  background: linear-gradient(135deg,#141e30,#243b55);
+  color: white;
+  transform: translateY(-12px) rotateX(6deg) scale(1.02);
+}
+
+.feature-card:hover {
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.2),
+    0 0 60px rgba(124,58,237,0.3);
+}
+
+/* Text adjustments on hover */
+.feature-card:hover .feature-desc,
+.feature-card:hover .feature-details p {
+  color: #e2e8f0;
+}
+
+/* ================= HEADER ================= */
+
+.feature-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feature-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.arrow {
+  transition: 0.5s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* ================= EXPAND AREA ================= */
+
+.feature-extra {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(.22,1,.36,1);
+}
+
+.feature-extra.show {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 1.5rem;
+}
+
+/* ================= DETAILS ================= */
+
+.feature-details h4 {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.feature-details p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ================= FLOW TIMELINE ================= */
+
+.flow {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  transition: 0.4s ease;
+}
+
+.flow-step:hover {
+  transform: translateX(10px);
+  background: linear-gradient(90deg,#7c3aed,#0ea5e9);
+}
+
+.step-index {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  color: #0f172a;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* ================= KEYFRAMES ================= */
+
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ===============================
+   ULTRA PREMIUM SERVICES
+   =============================== */
+
+.services {
+  padding: 1rem;
+  position: relative;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 2.5rem;
+  perspective: 1400px;
 }
 
-.feature-card,
-.service-card,
-.plan {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
+/* CARD BASE */
+.service-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(.22,1,.36,1);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+/* Animated glow border */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 24px;
+  background: linear-gradient(120deg,#7c3aed,#0ea5e9,#7c3aed);
+  background-size: 300% 300%;
+  animation: borderMove 6s linear infinite;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* IMAGE */
+.service-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.7s ease;
+}
+
+/* Dark cinematic overlay */
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6));
+  transition: 0.5s ease;
+}
+
+/* CONTENT */
+.service-content {
+  padding: 1.8rem;
+  transition: 0.5s ease;
+}
+
+.service-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 0.6rem;
+}
+
+/* HOVER STATE */
+.service-card:hover {
+  /* transform: translateY(-12px) rotateX(5deg) scale(1.02); */
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.2),
+    0 0 60px rgba(124,58,237,0.25);
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.1);
+}
+
+.service-card:hover .service-content {
+  background: linear-gradient(135deg,#141e30,#243b55);
+  color: white;
+}
+
+/* EXPAND AREA */
+.service-extra {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(.22,1,.36,1);
+}
+
+.service-extra.show {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+/* Highlights */
+.highlight {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+}
+
+/* Tech stack pills */
+.tech-stack {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-stack span {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  background: linear-gradient(90deg,#7c3aed,#0ea5e9);
+  color: white;
   transition: 0.3s;
 }
 
-.feature-card:hover,
-.service-card:hover,
-.plan:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+.tech-stack span:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(124,58,237,0.4);
 }
+
+/* Keyframes */
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ------------------------------------------------------------------------------------- */
+
 /* ---------------------------------------------------------------------------------------------------------- */
 
 /* PORTFOLIO */
@@ -252,52 +561,3 @@ blockquote {
 }
 
 /* ====================================================== */
-.service-card {
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: 0.4s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-}
-
-.service-image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-
-.service-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-  transition: transform 0.6s ease;
-}
-
-.service-image img:hover {
-    border: 1px solid #7c3aed;
-}
-
-/* Hover Zoom Effect */
-.service-card:hover img {
-  transform: scale(1.08);
-}
-
-.service-content {
-  padding: 1.5rem;
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
-}
-
-.service-content h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.service-content p {
-  color: #475569;
-}
