@@ -20,8 +20,6 @@ export class ContactComponent {
   ) { }
 
   ngOnInit() {
-    this.title.setTitle('Home - Your Brand');
-    this.meta.updateTag({ name: 'description', content: 'Best services in Mumbai' });
   }
 
 

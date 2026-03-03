@@ -15,9 +15,7 @@ export class PortfolioComponent {
   constructor(private title: Title, private meta: Meta) {}
 
 ngOnInit() {
-  this.title.setTitle('Home - Your Brand');
-  this.meta.updateTag({ name: 'description', content: 'Best services in Mumbai' });
-}
+ }
 
 
 }
