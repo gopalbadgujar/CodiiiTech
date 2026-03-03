@@ -59,8 +59,14 @@ export class ServicesComponent {
   ];
 
   goToService(slug: string) {
+  const hasAccess = false; // Replace with real condition later
+
+  if (!hasAccess) {
+    this.router.navigate(['/no-access']);
+  } else {
     this.router.navigate(['/services', slug]);
   }
+}
 
   
 
