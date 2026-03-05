@@ -1,178 +1,462 @@
 :host {
-    display: block
+    display: block;
 }
 
-.mobile-toggle {
-    display: none;
-    background: linear-gradient(135deg,#7c3aed,#0ea5e9);
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    padding: 0.4rem 0.6rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.mobile-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(124,58,237,0.4);
-}
-
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 1rem
-}
-
-.nav a {
-    position: relative;
-    color: rgba(255, 255, 255, 0.85);
-    text-decoration: none;
-    padding: 0.6rem 0.9rem;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-/* /_toggle glow background on hover_/ */
-.nav a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 6px;
-    width: 0%;
-    height: 2px;
-    background: linear-gradient(90deg, #7c3aed, #0ea5e9);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.nav a:hover {
-    color: #ffffff;
-    background: rgba(255,255,255,0.05);
-    transform: translateY(-2px);
-}
-
-.nav a:hover::after {
-    width: 60%;
-}
-
-.nav a.active {
-    background: linear-gradient(135deg, #441693, #0ea5e9);
-    color: white;
-    box-shadow: 0 8px 20px rgba(124,58,237,0.4);
-}
-
-
-@media (max-width:880px) {
-
-      .mobile-toggle {
-        display: block;   /* 🔥 SHOW BUTTON */
-    }
-    .nav {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 72px;
-        background: rgba(15, 23, 42, 0.95);
-        backdrop-filter: blur(12px);
-        flex-direction: column;
-        padding: 1rem;
-        gap: 0.5rem;
-        border-top: 1px solid rgba(255,255,255,0.05);
-        display: none;
-        animation: slideDown 0.3s ease;
-        border-radius: 0 0 16px 16px;
-    }
-
-    .nav.open {
-        display: flex;
-    }
-}
-
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* ================= HEADER ================= */
 
 .site-header {
+
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    backdrop-filter: blur(14px);
-    background: rgba(15, 23, 42, 0.85);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-    transition: all 0.3s ease;
+
+    /* background: linear-gradient(135deg,
+rgba(15, 23, 42, .85)); */
+    background: linear-gradient(135deg,
+            rgba(15, 23, 42, .95));
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, .45),
+        inset 0 1px 0 rgba(255, 255, 255, .05);
+
+    transition:
+        background .4s ease,
+        box-shadow .4s ease,
+        backdrop-filter .4s ease;
+
 }
 
-/* container aligns everything */
+/* ================= HEADER SCROLL ================= */
+
+.site-header.scrolled {
+
+    background: linear-gradient(135deg,
+            rgba(15, 23, 42, .95));
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    box-shadow:
+        0 16px 45px rgba(0, 0, 0, .55),
+        inset 0 1px 0 rgba(255, 255, 255, .04);
+
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+
+}
+
+/* animated gradient border */
+/* ================= PREMIUM HEADER BORDER ================= */
+
+.site-header::before {
+
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(90deg,
+            #7c3aed,
+            #0ea5e9,
+            #06b6d4,
+            #22c55e,
+            #7c3aed);
+
+    background-size: 400% 400%;
+
+    animation: premiumGradientMove 8s ease infinite;
+
+}
+
+/* glowing light layer */
+
+.site-header::after {
+
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+
+    background: linear-gradient(90deg,
+            rgba(124, 58, 237, .6),
+            rgba(14, 165, 233, .6),
+            rgba(34, 197, 94, .6));
+
+    filter: blur(8px);
+    opacity: .6;
+
+    pointer-events: none;
+
+}
+
+/* animation */
+
+@keyframes premiumGradientMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+/* ================= CONTAINER ================= */
 .container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 0.2rem;
-    display: flex;
+
+    max-width: 1400px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
-    min-height: 72px;
-    /* 🔥 STRONG HEADER HEIGHT */
+
+    min-height: 74px;
+
+    padding: 0 0.5rem;
+    gap: 10px;
+
 }
 
-/* brand block */
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
+/* ================= LOGO ================= */
 
-/* logo wrapper */
 .logo {
+
     display: flex;
     align-items: center;
     height: 100%;
+
 }
 
-/* 🔥 THIS IS THE KEY */
 .logo-img {
+
     height: 56px;
     max-width: 220px;
+
     object-fit: contain;
-    transition: transform 0.3s ease;
+
+    transition: all .4s ease;
+
 }
 
-.logo:hover .logo-img {
-    transform: scale(1.08);
+/* floating logo animation */
+
+.logo-img:hover {
+
+    transform: scale(1.08) rotate(-1deg);
+
+    filter: drop-shadow(0 10px 22px rgba(124, 58, 237, .5));
+
 }
 
-app-searchbar {
-  flex: 1;
-  max-width: 520px;  /* 🔥 professional width */
-  margin: 0 1.5rem;
+/* ================= COMPANY TICKER ================= */
+
+.company-ticker {
+
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .85);
+
+}
+
+/* scrolling track */
+
+.ticker-track {
+
+    display: inline-flex;
+    gap: 60px;
+
+    animation: tickerScroll 22s linear infinite;
+
+}
+
+/* text style */
+
+.ticker-track span {
+
+    opacity: .85;
+
+    background: linear-gradient(90deg, #e7d8ff, #0ea5e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+
+}
+
+/* animation */
+
+@keyframes tickerScroll {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+/* ================= NAV ================= */
+
+.nav {
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+}
+
+/* ================= LINKS ================= */
+
+.nav a {
+
+    position: relative;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: rgba(255, 255, 255, .8);
+
+    text-decoration: none;
+
+    padding: .55rem .9rem;
+
+    border-radius: 8px;
+
+    transition: all .25s ease;
+
+}
+
+/* glass hover */
+
+.nav a:hover {
+
+    color: white;
+
+    background: rgba(255, 255, 255, .08);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+
+}
+
+/* animated underline */
+
+.nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 6px;
+    left: 50%;
+
+    width: 0%;
+    height: 2px;
+
+    background: linear-gradient(90deg,
+            #7c3aed,
+            #0ea5e9);
+
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+
+    transition: all .35s ease;
+
+}
+
+/* underline grow */
+
+.nav a:hover::after {
+
+    width: 70%;
+
+}
+
+/* ================= ACTIVE ================= */
+
+.nav a.active {
+
+    background: linear-gradient(135deg,
+            #7c3aed,
+            #0ea5e9);
+
+    color: white;
+
+    box-shadow:
+
+        0 10px 28px rgba(124, 58, 237, .45),
+        inset 0 0 0 1px rgba(255, 255, 255, .12);
+
+    transform: translateY(-1px);
+
 }
 
 
-/* Tablet */
-@media (max-width: 880px) {
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1024px) {
+
+    .nav {
+        gap: 10px;
+    }
+
+    .nav a {
+        font-size: 13px;
+        padding: .45rem .5rem;
+    }
+
+    .company-ticker {
+        font-size: 13px;
+    }
+}
+
+/* tablet */
+
+@media(max-width:768px) {
+
     .container {
         min-height: 64px;
     }
 
     .logo-img {
-        height: 48px;
-        max-width: 180px;
+        height: 38px;
+    }
+
+    .nav {
+        gap: 4px;
+    }
+
+    .nav a {
+
+        font-size: 12px;
+        padding: .4rem .55rem;
+
+    }
+
+    .company-ticker {
+        font-size: 12px;
     }
 }
 
-/* Mobile */
-@media (max-width: 480px) {
+@media(max-width:650px) {
+
     .container {
-        min-height: 58px;
+        min-height: 64px;
     }
 
     .logo-img {
-        height: 42px;
-        max-width: 150px;
+        height: 35px;
     }
+
+    .nav {
+        gap: 2px;
+    }
+
+    .nav a {
+        font-size: 10px;
+        padding: .4rem .4rem;
+
+    }
+
+    .company-ticker {
+        font-size: 10px;
+    }
+
+}
+
+/* mobile */
+
+@media(max-width:480px) {
+
+    .container {
+
+        min-height: 56px;
+          padding: 0 0.3rem;
+    gap: 5px;
+    }
+
+    .logo-img {
+        height: 32px;
+    }
+
+    .nav {
+        gap: 2px;
+    }
+
+    .nav a {
+        font-size: 9px;
+        padding: .4rem .35rem;
+    }
+
+    .company-ticker {
+        font-size: 9px;
+    }
+}
+
+@media(max-width:380px) {
+
+    .container {
+        min-height: 56px;
+          padding: 0 0.2rem;
+    gap: 5px;
+    }
+
+    .logo-img {
+        height: 28px;
+    }
+
+    .nav {
+        gap: 1px;
+    }
+
+    .nav a {
+        font-size: 8px;
+        padding: .4rem .3rem;
+    }
+
+    .company-ticker {
+        font-size: 8px;
+    }
+}
+/* ================= ANIMATION ================= */
+
+@keyframes gradientMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
 }

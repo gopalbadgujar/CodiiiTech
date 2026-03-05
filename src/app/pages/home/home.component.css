@@ -12,7 +12,8 @@
 /* HERO */
 .hero {
   background: radial-gradient(circle at top left, #7c3aed22, transparent 40%),
-              radial-gradient(circle at bottom right, #0ea5e922, transparent 40%);
+    radial-gradient(circle at bottom right, #0ea5e922, transparent 40%);
+  padding: 6rem 1rem 4rem 1rem;
 }
 
 .hero-inner {
@@ -75,7 +76,7 @@
 .hero-stats {
   display: flex;
   gap: 2rem;
-  margin-top: 1.5rem;
+  margin: 1.5rem;
 }
 
 .hero-stats strong {
@@ -98,8 +99,9 @@
   background: white;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
+
 /* ---------------------------------------------------------------------------------------------------------- */
 /* ===============================
    ULTRA PREMIUM FEATURE SECTION
@@ -135,7 +137,7 @@
   border-radius: 22px;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.6s cubic-bezier(.22,1,.36,1);
+  transition: all 0.6s cubic-bezier(.22, 1, .36, 1);
 }
 
 .card-inner {
@@ -143,8 +145,8 @@
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(18px);
-  border: 1px solid rgba(255,255,255,0.4);
-  transition: 0.6s cubic-bezier(.22,1,.36,1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: 0.6s cubic-bezier(.22, 1, .36, 1);
 }
 
 /* Animated gradient border glow */
@@ -153,7 +155,7 @@
   position: absolute;
   inset: -2px;
   border-radius: 24px;
-  background: linear-gradient(120deg,#7c3aed,#0ea5e9,#7c3aed);
+  background: linear-gradient(120deg, #7c3aed, #0ea5e9, #7c3aed);
   background-size: 300% 300%;
   z-index: -1;
   opacity: 0.7;
@@ -162,21 +164,21 @@
 
 /* Initial soft shadow */
 .feature-card {
-  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
 }
 
 /* ================= HOVER STATE ================= */
 
 .feature-card:hover .card-inner {
-  background: linear-gradient(135deg,#141e30,#243b55);
+  background: linear-gradient(135deg, #141e30, #243b55);
   color: white;
   transform: translateY(-12px) rotateX(6deg) scale(1.02);
 }
 
 .feature-card:hover {
   box-shadow:
-    0 30px 80px rgba(0,0,0,0.2),
-    0 0 60px rgba(124,58,237,0.3);
+    0 30px 80px rgba(0, 0, 0, 0.2),
+    0 0 60px rgba(124, 58, 237, 0.3);
 }
 
 /* Text adjustments on hover */
@@ -212,7 +214,7 @@
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: all 0.6s cubic-bezier(.22,1,.36,1);
+  transition: all 0.6s cubic-bezier(.22, 1, .36, 1);
 }
 
 .feature-extra.show {
@@ -249,14 +251,14 @@
   gap: 0.8rem;
   padding: 8px 12px;
   border-radius: 14px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6px);
   transition: 0.4s ease;
 }
 
 .flow-step:hover {
   transform: translateX(10px);
-  background: linear-gradient(90deg,#7c3aed,#0ea5e9);
+  background: linear-gradient(90deg, #7c3aed, #0ea5e9);
 }
 
 .step-index {
@@ -275,9 +277,17 @@
 /* ================= KEYFRAMES ================= */
 
 @keyframes borderMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* ================= RESPONSIVE ================= */
@@ -287,6 +297,7 @@
     grid-template-columns: 1fr;
   }
 }
+
 /* ------------------------------------------------------------------------------------------------------------ */
 /* ===============================
    ULTRA PREMIUM SERVICES
@@ -310,11 +321,11 @@
   border-radius: 22px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.6s cubic-bezier(.22,1,.36,1);
-  background: rgba(255,255,255,0.7);
+  transition: all 0.6s cubic-bezier(.22, 1, .36, 1);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.3);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
 }
 
 /* Animated glow border */
@@ -323,7 +334,7 @@
   position: absolute;
   inset: -2px;
   border-radius: 24px;
-  background: linear-gradient(120deg,#7c3aed,#0ea5e9,#7c3aed);
+  background: linear-gradient(120deg, #7c3aed, #0ea5e9, #7c3aed);
   background-size: 300% 300%;
   animation: borderMove 6s linear infinite;
   z-index: -1;
@@ -348,7 +359,7 @@
 .image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6));
+  background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.6));
   transition: 0.5s ease;
 }
 
@@ -374,8 +385,8 @@
 .service-card:hover {
   /* transform: translateY(-12px) rotateX(5deg) scale(1.02); */
   box-shadow:
-    0 30px 80px rgba(0,0,0,0.2),
-    0 0 60px rgba(124,58,237,0.25);
+    0 30px 80px rgba(0, 0, 0, 0.2),
+    0 0 60px rgba(124, 58, 237, 0.25);
 }
 
 .service-card:hover .service-image img {
@@ -383,7 +394,7 @@
 }
 
 .service-card:hover .service-content {
-  background: linear-gradient(135deg,#141e30,#243b55);
+  background: linear-gradient(135deg, #141e30, #243b55);
   color: white;
 }
 
@@ -392,7 +403,7 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: all 0.6s cubic-bezier(.22,1,.36,1);
+  transition: all 0.6s cubic-bezier(.22, 1, .36, 1);
 }
 
 .service-extra.show {
@@ -420,21 +431,29 @@
   padding: 5px 12px;
   border-radius: 20px;
   font-size: 0.75rem;
-  background: linear-gradient(90deg,#7c3aed,#0ea5e9);
+  background: linear-gradient(90deg, #7c3aed, #0ea5e9);
   color: white;
   transition: 0.3s;
 }
 
 .tech-stack span:hover {
   transform: scale(1.1);
-  box-shadow: 0 10px 20px rgba(124,58,237,0.4);
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.4);
 }
 
 /* Keyframes */
 @keyframes borderMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @media (max-width: 900px) {
@@ -442,17 +461,19 @@
     grid-template-columns: 1fr;
   }
 }
+
 /* ------------------------------------------------------------------------------------- */
 
 /* ---------------------------------------------------------------------------------------------------------- */
 
 /* PORTFOLIO */
-.portfolio{
+.portfolio {
   background: radial-gradient(circle at top left, #7c3aed11, transparent 40%),
-              radial-gradient(circle at bottom right, #0ea5e911, transparent 40%);
+    radial-gradient(circle at bottom right, #0ea5e911, transparent 40%);
   padding: 2rem;
   border-radius: 16px;
 }
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -474,7 +495,7 @@
 .portfolio-item .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   display: flex;
   flex-direction: column;
@@ -487,6 +508,7 @@
 .portfolio-item:hover .overlay {
   opacity: 1;
 }
+
 /* PLUS CARD BASE */
 .add-more-card {
   position: relative;
@@ -549,8 +571,9 @@ blockquote {
 @media (max-width: 900px) {
   .hero-inner {
     flex-direction: column;
-    text-align: center;
+    /* text-align: center; */
   }
+
   .features-grid,
   .services-grid,
   .portfolio-grid,
@@ -561,3 +584,67 @@ blockquote {
 }
 
 /* ====================================================== */
+@media (max-width:768px) {
+.hero-inner {
+    text-align: center;
+  }
+  
+  .hero {
+    text-align: center;
+  }
+  .hero-left h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+  .lead {
+    font-size: 1rem;
+    max-width: 100%;
+    margin: 1rem;
+}
+}
+
+@media (max-width:480px) {
+
+  .hero-left h1 {
+    font-size: 1.8rem;
+  }
+.hero-stats {
+    font-size: 0.6rem;
+  }
+  .lead {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: .65rem 1rem;
+    font-size: .9rem;
+  }
+
+}
+
+
+@media (max-width:420px) {
+
+  .hero-left h1 {
+    font-size: 1.2rem;
+  }
+.hero-stats {
+    font-size: 0.6rem;
+  }
+  .lead {
+    font-size: 0.7rem;
+  }
+
+  .btn {
+    padding: .65rem 1rem;
+    font-size: .8rem;
+  }
+
+}
