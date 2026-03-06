@@ -26,62 +26,66 @@ export class ServicesComponent {
       description:
         'Our software development services cover web, cloud, and mobile applications.',
       slug: 'software-development',
-      expanded: false,
+      expanded: false
     },
     {
       title: 'WEB DEVELOPMENT',
       description:
         'Web application development services with highly skilled IT professionals to build scalable and modern solutions.',
       slug: 'web-development',
-      expanded: false,
+      expanded: false
     },
     {
       title: 'APPLICATION DEVELOPMENT',
       description:
         'Mobile app solutions customized for your business. We create future-readymobile experiences.',
       slug: 'application-development',
-      expanded: false,
+      expanded: false
     },
     {
       title: 'CLOUD COMPUTING',
       description:
         'On-demand availability of computing resources, storage, and processing power without direct management.',
       slug: 'cloud-computing',
-      expanded: false,
+      expanded: false
     },
     {
       title: 'TRAINING AND CONSULTING',
       description:
         'We empower businesses with strategic training programs and expert consulting services designed to enhance skills, optimize performance, and drive sustainable growth. Our tailored solutions help organizations adapt to market changes, improve operational efficiency, and achieve long-term success.',
       slug: 'training-consulting',
-      expanded: false,
+      expanded: false
     },
     {
       title: 'BPO',
       description:
         'Our Business Process Outsourcing (BPO) services streamline your operations byefficiently managing IT resources and business processes aligned with your organizational goals. We ensure cost-effective solutions, improved productivity, and seamless support so you can focus on your core business growth.',
       slug: 'bpo',
-      expanded: false,
+      expanded: false
     },
   ];
 
   toggleService(service: any) {
-    this.services.forEach((s) => {
-      if (s !== service) {
-        s.expanded = false;
-      }
-    });
 
-    service.expanded = !service.expanded;
+  if(service.expanded){
+    service.expanded = false;
+    return;
   }
 
-  goToService(slug: string) {
-    const hasAccess = false;
+  this.services.forEach(s => s.expanded = false);
+  service.expanded = true;
 
-    if (!hasAccess) {
-      this.router.navigate(['/no-access']);
-    } else {
-      this.router.navigate(['/services', slug]);
-    }
+}
+
+  goToService(slug: string) {
+    console.log('Accessing service:', slug);
+     this.router.navigate(['/no-access']);
+    // const hasAccess = false;
+
+    // if (!hasAccess) {
+    //   this.router.navigate(['/no-access']);
+    // } else {
+    //   this.router.navigate(['/services', slug]);
+    // }
   }
 }

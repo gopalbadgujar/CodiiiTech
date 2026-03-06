@@ -12,33 +12,35 @@
 
     <div class="services-grid">
 
-      <article class="service-card" *ngFor="let service of services" (click)="toggleService(service)">
+      <div *ngFor="let service of services">
+        <article class="service-card" (click)="toggleService(service)">
 
-        <div class="service-inner">
+          <div class="service-inner">
 
-          <h3>{{ service.title }}</h3>
+            <h3>{{ service.title }}</h3>
 
-          <!-- Short description -->
-          <p *ngIf="!service.expanded" class="short">
-            {{ service.description | slice:0:90 }}...
-            <button class="more-toggle" (click)="$event.stopPropagation(); toggleService(service)">
-              More
-            </button>
-          </p>
+            <!-- Short description -->
+            <p *ngIf="!service.expanded" class="short">
+              {{ service.description | slice:0:90 }}...
+              <button class="more-toggle" (click)="$event.stopPropagation(); toggleService(service)">
+                More
+              </button>
+            </p>
 
-          <!-- Full description -->
-          <p *ngIf="service.expanded" class="full">
-            {{ service.description }}
-          </p>
+            <!-- Full description -->
+            <p *ngIf="service.expanded" class="full">
+              {{ service.description }}
+            </p>
 
-        </div>
+          </div>
 
+
+        </article>
         <!-- Button only visible after expand -->
-        <button *ngIf="service.expanded" class="more-btn" (click)="$event.stopPropagation(); goToService(service.slug)">
+        <button *ngIf="service.expanded" class="more-btn" (click)="goToService(service.slug)">
           Explore Service →
         </button>
-
-      </article>
+      </div>
 
     </div>
 
