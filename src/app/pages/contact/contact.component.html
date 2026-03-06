@@ -1,67 +1,104 @@
 <section class="contact-wrapper">
+
   <div class="contact-container">
-    <!-- Header -->
+
+    <!-- HEADER -->
     <div class="contact-header">
+
       <span class="subtitle">CONTACT US</span>
+
       <h1>
-        Get in Touch with <span>CodiiiTech Solutions</span>
+        Get in Touch with <span>CodiiiTech</span>
       </h1>
+
+      <p class="contact-desc">
+        Have a project in mind? Let's build something amazing together.
+        Our team will respond within 24 hours.
+      </p>
+
     </div>
 
-    <!-- Info Row -->
-    <!-- <div class="contact-info">
-      <div>
-        <p>
-          Shop 10-A, Q Building Dhruv Darshan Society<br />
-          Near PCCOE College PCMC<br />
-          Nigdi, Pune, Maharashtra 411044
-        </p>
-      </div>
 
-      <div>
-        <a href="mailto:hello&#64;codiiitech.com">
-          hello&#64;codiiitech.com
-        </a>
-      </div>
-
-      <div>
-        <a href="tel:+917020215508">+91 7020215508</a>
-      </div>
-    </div> -->
-
-    <!-- Main Grid -->
+    <!-- MAIN GRID -->
     <div class="contact-grid">
-      <!-- Form -->
+
+      <!-- CONTACT FORM -->
       <form class="contact-form" (ngSubmit)="submitForm()" #contactForm="ngForm">
 
         <div class="two-col">
-          <input type="text" name="name" placeholder="Enter your name" [(ngModel)]="form.name" required />
 
-          <input type="email" name="email" placeholder="Enter your email" [(ngModel)]="form.email" required />
+          <div class="input-group">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Enter your name" [(ngModel)]="form.name" required>
+          </div>
+
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email" [(ngModel)]="form.email" required>
+          </div>
+
         </div>
+
 
         <div class="two-col">
-          <input type="tel" name="mobile" placeholder="Enter your phone" [(ngModel)]="form.mobile" required />
 
-          <input type="text" name="address" placeholder="Enter your website" [(ngModel)]="form.address" />
+          <div class="input-group">
+            <label>Phone</label>
+            <input type="tel" name="mobile" placeholder="Enter your phone" [(ngModel)]="form.mobile" required>
+          </div>
+
+          <div class="input-group">
+            <label>Website</label>
+            <input type="text" name="address" placeholder="Enter your website" [(ngModel)]="form.address">
+          </div>
+
         </div>
 
-        <textarea name="message" rows="5" placeholder="Write your message" [(ngModel)]="form.message"
-          required></textarea>
+
+        <div class="input-group">
+          <label>Message</label>
+          <textarea name="message" rows="5" placeholder="Write your message" [(ngModel)]="form.message" required>
+          </textarea>
+        </div>
+
 
         <button type="submit" [disabled]="contactForm.invalid || loading">
+
           {{ loading ? 'Sending...' : 'Send Message' }}
+
         </button>
 
       </form>
 
-      <!-- Map -->
-      <!-- <div class="map">
-        <iframe src="https://www.google.com/maps?q=Dhruv%20Darshan%20Nigdi%20Pune&output=embed" loading="lazy"
-          title="CodiiiTech office location on Google Maps">
-        </iframe>
+
+      <!-- CONTACT INFO CARD -->
+
+      <!-- <div class="contact-info-card">
+
+        <h3>Contact Information</h3>
+
+        <div class="info-item">
+          📍 Shop 10-A, Q Building Dhruv Darshan Society<br>
+          Near PCCOE College PCMC<br>
+          Nigdi, Pune, Maharashtra
+        </div>
+
+        <div class="info-item">
+          ✉ <a href="mailto:hello&#64;codiiitech.com">hello&#64;codiiitech.com</a>
+        </div>
+
+        <div class="info-item">
+          ☎ +91 7020215508
+        </div>
+
+        <div class="info-note">
+          We usually respond within a few hours.
+        </div>
+
       </div> -->
 
     </div>
+
   </div>
+
 </section>

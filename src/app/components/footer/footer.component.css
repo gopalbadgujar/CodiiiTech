@@ -1,272 +1,277 @@
-:host {
-    display: block
+:host{
+  display:block;
 }
 
-/* Footer placed in document flow (not fixed) so it appears after content. The app layout uses flex so footer will sit at bottom when content is short */
-.site-footer {
-    position: relative;
-    background: radial-gradient(circle at 20% 20%, rgba(124,58,237,0.25), transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(14,165,233,0.25), transparent 40%),
-                linear-gradient(180deg, #0b1120, #0f172a);
-    color: #cbd5e1;
-    padding: 4rem 0 3rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    overflow: hidden;
+/* ==============================
+   FOOTER BASE
+============================== */
+
+.site-footer{
+  background:
+  radial-gradient(circle at 20% 30%, rgba(124,58,237,.25), transparent 40%),
+  radial-gradient(circle at 80% 70%, rgba(14,165,233,.25), transparent 40%),
+  linear-gradient(180deg,#020617,#020617,#0f172a);
+
+  color:#cbd5e1;
+
+  padding:80px 20px 30px;
+
+  border-top:1px solid rgba(255,255,255,.05);
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1rem;
+/* ==============================
+   CONTAINER
+============================== */
+
+.footer-container{
+  max-width:1400px;
+  margin:auto;
 }
 
-.cols {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(160px, 1fr));
-    gap: 1.5rem;
-    align-items: start;
+/* ==============================
+   GRID
+============================== */
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1.2fr;
+  gap:40px;
 }
 
-.site-footer h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #7c3aed, #0ea5e9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* ==============================
+   LOGO
+============================== */
+
+.footer-logo img{
+  height:48px;
+  margin-bottom:16px;
 }
 
-.site-footer h4 {
-    color: #ffffff;
-    font-weight: 600;
+/* ==============================
+   COMPANY
+============================== */
+
+.company p{
+  font-size:14px;
+  line-height:1.7;
+  color:#94a3b8;
 }
 
-.col {
-    padding: 1.2rem;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.03);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: all 0.35s ease;
+.footer-badge{
+  margin-top:14px;
+  font-size:13px;
+  padding:6px 14px;
+
+  background:rgba(124,58,237,.15);
+  border:1px solid rgba(124,58,237,.3);
+
+  border-radius:20px;
+
+  display:inline-block;
 }
 
-.col:hover {
-    transform: translateY(-6px);
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(124,58,237,0.4);
-    box-shadow: 0 15px 40px rgba(124,58,237,0.25);
-}
-.col p { color: #cbd5e1; margin: 0.25rem 0 }
+/* ==============================
+   TITLES
+============================== */
 
-.col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.footer-col h4{
+  color:white;
+  margin-bottom:16px;
+  font-size:16px;
 }
 
-.col ul li {
-    position: relative;
-    padding-left: 22px;
-    margin-bottom: 10px;
+/* ==============================
+   LINKS
+============================== */
+
+.footer-col ul{
+  list-style:none;
+  padding:0;
+  margin:0;
 }
 
-.col ul li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #7c3aed, #0ea5e9);
-    box-shadow: 0 0 8px rgba(124,58,237,0.6);
-    transition: all 0.3s ease;
+.footer-col li{
+  margin-bottom:10px;
 }
 
-.col ul li:hover::before {
-    transform: scale(1.4);
-    box-shadow: 0 0 12px rgba(14,165,233,0.8);
+.footer-col a{
+  text-decoration:none;
+  color:#94a3b8;
+  font-size:14px;
+
+  transition:.3s;
 }
 
-.col a {
-    position: relative;
-    color: #cbd5e1;
-    text-decoration: none;
-    transition: all 0.3s ease;
+.footer-col a:hover{
+  color:white;
 }
 
-.col a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0%;
-    height: 2px;
-    background: linear-gradient(90deg,#7c3aed,#0ea5e9);
-    transition: width 0.3s ease;
+/* ==============================
+   CONTACT
+============================== */
+
+.contact p{
+  font-size:14px;
+  margin-bottom:10px;
+  color:#94a3b8;
 }
 
-.col a:hover {
-    color: #ffffff;
+/* ==============================
+   SOCIAL ICONS
+============================== */
+
+.socials{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
 }
 
-.col a:hover::after {
-    width: 100%;
+.social{
+  width:38px;
+  height:38px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  color:white;
+
+  transition:.35s;
 }
 
-/* Container */
-.socials {
-  display: flex;
-  gap: 14px;
-  margin-top: 15px;
-  flex-wrap: wrap;
+.social i{
+  font-size:16px;
 }
 
-/* Base Style */
-.social-icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  font-size: 14px;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.1);
-  overflow: hidden;
-  transition: all 0.4s ease;
+/* ICON COLORS */
+
+.instagram{
+  background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);
 }
 
-/* Floating Hover Effect */
-.social-icon:hover {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+.linkedin{
+  background:#0A66C2;
 }
 
-/* Shine Sweep Effect */
-.social-icon::after {
-  content: "";
-  position: absolute;
-  top: -120%;
-  left: -120%;
-  width: 250%;
-  height: 250%;
-  background: linear-gradient(
-    120deg,
-    transparent 40%,
-    rgba(255,255,255,0.25) 50%,
-    transparent 60%
-  );
-  transform: rotate(25deg);
-  transition: 0.8s;
+.email{
+  background:linear-gradient(135deg,#7c3aed,#0ea5e9);
 }
 
-.social-icon:hover::after {
-  top: 120%;
-  left: 120%;
+.social:hover{
+  transform:translateY(-4px) scale(1.08);
+  box-shadow:0 12px 30px rgba(0,0,0,.5);
 }
 
-/* Icon Size */
-.social-icon i {
-  font-size: 18px;
+/* ==============================
+   BOTTOM BAR
+============================== */
+
+.footer-bottom{
+  margin-top:50px;
+
+  padding-top:20px;
+
+  border-top:1px solid rgba(255,255,255,.06);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  font-size:13px;
+  color:#94a3b8;
 }
 
-/* Instagram Gradient */
-.instagram {
-  background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
-  background-size: 200% 200%;
-  animation: instaMove 6s ease infinite;
+.back-top{
+  background:linear-gradient(135deg,#7c3aed,#0ea5e9);
+  border:none;
+  color:white;
+
+  padding:8px 16px;
+
+  border-radius:20px;
+
+  cursor:pointer;
+
+  font-size:12px;
+
+  transition:.3s;
 }
 
-/* LinkedIn */
-.linkedin {
-  background: linear-gradient(135deg,#0A66C2,#004182);
+.back-top:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(124,58,237,.5);
 }
 
-/* Email */
-.email {
-  background: linear-gradient(135deg,#7c3aed,#0ea5e9);
+/* ==============================
+   PRIVACY DROPDOWN
+============================== */
+
+.privacy-dropdown{
+  margin-top:30px;
 }
 
-/* Animated Instagram Gradient */
-@keyframes instaMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* ==============================
+   RESPONSIVE
+============================== */
+
+/* LAPTOP */
+@media(max-width:1200px){
+
+.footer-grid{
+grid-template-columns:1.5fr 1fr 1fr;
 }
 
-/* Mobile Responsive */
-@media(max-width: 600px){
-  .social-icon span {
-    display: none; /* Hide text on small screens */
-  }
-
-  .social-icon {
-    padding: 12px;
-    border-radius: 50%;
-    justify-content: center;
-  }
-}
-.footer-actions {
-    margin-top: 1.5rem;
-    display:flex;
-    justify-content: center;
+.contact{
+grid-column:1/-1;
 }
 
-.privacy-toggle {
-    background: linear-gradient(135deg,#7c3aed,#0ea5e9);
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 0.95rem;
-    padding: 0.6rem 1rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
 }
 
-.privacy-toggle:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(124,58,237,0.5);
-}
-.arrow { transition: transform 0.25s ease; }
-.arrow.open { transform: rotate(180deg); }
+/* TABLET */
+@media(max-width:900px){
 
-/* Dropdown container */
-.privacy-dropdown {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+.footer-grid{
+grid-template-columns:1fr 1fr;
+gap:30px;
 }
 
-/* copyrights */
-.copyright {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    color: rgba(255,255,255,0.6);
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
 }
 
-/* logo wrapper */
-.logo {
-    display: flex;
-    justify-content: flex-end;
-    height: 100%;
-    margin: 25px;
+/* MOBILE */
+@media(max-width:600px){
+
+.footer-grid{
+grid-template-columns:1fr;
 }
 
-/* 🔥 THIS IS THE KEY */
-.logo-img {
-    height: 56px;
-    /* BIG & VISIBLE */
-    max-width: 220px;
-    object-fit: contain;
+.footer-bottom{
+flex-direction:column;
+gap:14px;
+text-align:center;
 }
 
-@media (max-width:880px) {
-    .cols { grid-template-columns: 1fr; gap: 1rem }
-    .footer-actions { justify-content: flex-start }
+.footer-logo img{
+height:42px;
+}
+
+}
+
+/* SMALL MOBILE */
+@media(max-width:380px){
+
+.site-footer{
+padding:60px 16px 30px;
+}
+
+.footer-col h4{
+font-size:15px;
+}
+
+.footer-col a,
+.contact p{
+font-size:13px;
+}
+
 }

@@ -1,54 +1,112 @@
 <section class="career">
-    <div class="career-container">
-        <h1 class="career-title">Join Our <span>Team</span></h1>
 
-        <!-- Filter Section -->
-        <div class="career-filters">
-            <label>
-                Department:
-                <select [(ngModel)]="selectedDepartment" class="filter-select">
-                    <option value="all">All Departments</option>
-                    <option value="frontend">Frontend</option>
-                    <option value="backend">Backend</option>
-                    <option value="design">Design</option>
-                    <option value="devops">DevOps</option>
-                    <option value="qa">QA</option>
-                    <option value="pm">Project Management</option>
-                </select>
-            </label>
+  <div class="career-container">
 
-            <label>
-                Location:
-                <select [(ngModel)]="selectedLocation" class="filter-select">
-                    <option value="all">All Locations</option>
-                    <option value="mumbai">Mumbai</option>
-                    <option value="navi-mumbai">Navi Mumbai</option>
-                    <option value="remote">Remote</option>
-                </select>
-            </label>
+    <!-- HEADER -->
+    <div class="career-header">
+      <h1 class="career-title">
+        Join Our <span>Team</span>
+      </h1>
+
+      <p class="career-subtitle">
+        Help us build modern digital solutions and shape the future of technology.
+      </p>
+    </div>
+
+
+    <!-- FILTER BAR -->
+    <div class="career-filters">
+
+      <div class="filter-item">
+
+        <label>Department</label>
+
+        <div class="select-wrapper">
+          <select [(ngModel)]="selectedDepartment" class="filter-select">
+
+            <option value="all">All Departments</option>
+            <option value="frontend">Frontend</option>
+            <option value="backend">Backend</option>
+            <option value="design">Design</option>
+            <option value="devops">DevOps</option>
+            <option value="qa">QA</option>
+            <option value="pm">Project Management</option>
+
+          </select>
+
         </div>
 
-        <!-- No Vacancies Premium Card -->
-<div class="no-vacancy">
-  <div class="no-vacancy-icon">💼</div>
-  <h3>No Vacancies Available Right Now</h3>
-  <p>
-    Thank you for your interest in joining our team. 
-    Currently, we do not have any open positions, 
-    but exciting opportunities will be announced soon.
-  </p>
-<button class="notify-btn" (click)="openForm()">
-  Stay Connected
-</button></div>
+      </div>
 
-        <!-- Job Cards Grid -->
-        <!-- <div class="career-grid">
-            <article class="job-card" *ngFor="let job of filteredJobs">
-                <h3>{{ job.title }}</h3>
-                <p class="job-info">{{ job.type }} | {{ job.location | titlecase  }}</p>
-                <p>{{ job.description }}</p>
-                <a href="#" class="apply-btn">Apply Now</a>
-            </article>
-        </div> -->
+
+      <div class="filter-item">
+
+        <label>Location</label>
+
+        <div class="select-wrapper">
+          <select [(ngModel)]="selectedLocation" class="filter-select">
+
+            <option value="all">All Locations</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="navi-mumbai">Navi Mumbai</option>
+            <option value="remote">Remote</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
     </div>
+
+
+    <!-- NO VACANCY CARD -->
+
+    <div class="no-vacancy">
+
+      <div class="vacancy-icon">💼</div>
+
+      <h3>No Vacancies Available Right Now</h3>
+
+      <p>
+        Thank you for your interest in joining CodiiiTech.
+        Currently we do not have open positions, but exciting
+        opportunities will be announced soon.
+      </p>
+
+      <button class="notify-btn" (click)="openForm()">
+        Stay Connected
+      </button>
+
+    </div>
+
+
+    <!-- JOB GRID (future use) -->
+
+    <!--
+    <div class="career-grid">
+
+      <article class="job-card" *ngFor="let job of filteredJobs">
+
+        <h3>{{ job.title }}</h3>
+
+        <p class="job-info">
+          {{ job.type }} • {{ job.location | titlecase }}
+        </p>
+
+        <p class="job-desc">
+          {{ job.description }}
+        </p>
+
+        <a href="#" class="apply-btn">
+          Apply Now
+        </a>
+
+      </article>
+
+    </div>
+    -->
+
+  </div>
+
 </section>

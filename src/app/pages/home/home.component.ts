@@ -11,20 +11,25 @@ import { Title, Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule, PortfolioComponent, ServicesComponent, AboutComponent, CareerComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    PortfolioComponent,
+    ServicesComponent,
+    AboutComponent,
+    CareerComponent,
+  ],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
+  constructor(
+    private title: Title,
+    private meta: Meta,
+  ) {}
 
-
-  constructor(private title: Title, private meta: Meta) { }
-
-  ngOnInit() {
-    // this.title.setTitle('Home - Your Brand');
-    // this.meta.updateTag({ name: 'description', content: 'Best services in Mumbai' });
-  }
-
+  ngOnInit() {}
 
   features = [
     {
@@ -41,9 +46,9 @@ export class HomeComponent {
         'Architecture',
         'Development',
         'Testing',
-        'Deployment'
+        'Deployment',
       ],
-      expanded: false
+      expanded: false,
     },
     {
       title: 'Reliable Engineering',
@@ -54,13 +59,8 @@ export class HomeComponent {
       • Code reviews
       • Monitoring & logging
     `,
-      flow: [
-        'Design Review',
-        'Code Standards',
-        'QA Automation',
-        'Release'
-      ],
-      expanded: false
+      flow: ['Design Review', 'Code Standards', 'QA Automation', 'Release'],
+      expanded: false,
     },
     {
       title: 'Beautiful Design',
@@ -71,95 +71,111 @@ export class HomeComponent {
       • UI Prototyping
       • User Testing
     `,
-      flow: [
-        'Research',
-        'Wireframe',
-        'Prototype',
-        'User Testing',
-        'Launch'
-      ],
-      expanded: false
-    }
+      flow: ['Research', 'Wireframe', 'Prototype', 'User Testing', 'Launch'],
+      expanded: false,
+    },
   ];
 
   toggleFeature(feature: any) {
-  this.features.forEach(f => {
-    if (f !== feature) f.expanded = false;
-  });
-  feature.expanded = !feature.expanded;
-}
-
-// ----------------------------------------------------------------------------------------------
-
-services = [
-  {
-    title: 'Web Engineering',
-    subtitle: 'Scalable Digital Platforms',
-    desc: 'High-performance websites & enterprise-grade applications.',
-    icon: '/assets/images/webdevelopment.jpg',
-    highlights: [
-      'Angular & React Apps',
-      'Headless CMS',
-      'E-Commerce Architecture',
-      'Performance Optimization'
-    ],
-    tech: ['Angular', 'Node.js', 'AWS'],
-    expanded: false
-  },
-  {
-    title: 'Mobile Innovation',
-    subtitle: 'Cross-Platform Experiences',
-    desc: 'Native-feel iOS & Android applications built for scale.',
-    icon: '/assets/images/mobileapps2.jpg',
-    highlights: [
-      'Flutter & React Native',
-      'App Store Deployment',
-      'Push & Realtime Systems',
-      'Secure API Integration'
-    ],
-    tech: ['Flutter', 'Firebase', 'Swift'],
-    expanded: false
-  },
-  {
-    title: 'Product Design',
-    subtitle: 'UX Strategy & Interface Systems',
-    desc: 'User-first research driven digital design systems.',
-    icon: '/assets/images/productdesign1.webp',
-    highlights: [
-      'UX Research',
-      'Wireframing',
-      'Interactive Prototypes',
-      'Design Systems'
-    ],
-    tech: ['Figma', 'Framer', 'Adobe XD'],
-    expanded: false
+    this.features.forEach((f) => {
+      if (f !== feature) f.expanded = false;
+    });
+    feature.expanded = !feature.expanded;
   }
-];
 
-toggleService(service: any) {
-  this.services.forEach(s => {
-    if (s !== service) s.expanded = false;
-  });
-  service.expanded = !service.expanded;
-}
+  // ----------------------------------------------------------------------------------------------
 
-// ----------------------------------------------------------------------------------------------
+  services = [
+    {
+      title: 'Web Engineering',
+      subtitle: 'Scalable Digital Platforms',
+      desc: 'High-performance websites & enterprise-grade applications.',
+      icon: '/assets/images/webdevelopment.jpg',
+      highlights: [
+        'Angular & React Apps',
+        'Headless CMS',
+        'E-Commerce Architecture',
+        'Performance Optimization',
+      ],
+      tech: ['Angular', 'Node.js', 'AWS'],
+      expanded: false,
+    },
+    {
+      title: 'Mobile Innovation',
+      subtitle: 'Cross-Platform Experiences',
+      desc: 'Native-feel iOS & Android applications built for scale.',
+      icon: '/assets/images/mobileapps2.jpg',
+      highlights: [
+        'Flutter & React Native',
+        'App Store Deployment',
+        'Push & Realtime Systems',
+        'Secure API Integration',
+      ],
+      tech: ['Flutter', 'Firebase', 'Swift'],
+      expanded: false,
+    },
+    {
+      title: 'Product Design',
+      subtitle: 'UX Strategy & Interface Systems',
+      desc: 'User-first research driven digital design systems.',
+      icon: '/assets/images/productdesign1.webp',
+      highlights: [
+        'UX Research',
+        'Wireframing',
+        'Interactive Prototypes',
+        'Design Systems',
+      ],
+      tech: ['Figma', 'Framer', 'Adobe XD'],
+      expanded: false,
+    },
+  ];
+
+  toggleService(service: any) {
+    this.services.forEach((s) => {
+      if (s !== service) s.expanded = false;
+    });
+    service.expanded = !service.expanded;
+  }
+
+  // ----------------------------------------------------------------------------------------------
 
   portfolio = [
-    { name: 'Shopify Plus App', tag: 'E-Commerce', img: '/assets/companyLogo_1.png' },
+    {
+      name: 'Shopify Plus App',
+      tag: 'E-Commerce',
+      img: '/assets/companyLogo_1.png',
+    },
     // { name: 'FinTech Dashboard', tag: 'SaaS', img: '/assets/companyLogo_1.png' },
     // { name: 'Healthcare App', tag: 'Mobile', img: '/assets/companyLogo_1.png' }
   ];
 
   testimonials = [
-    { quote: 'They launched our MVP in 8 weeks and exceeded expectations.', author: 'Sarah K, CEO' },
-    { quote: 'Great team, high quality and excellent communication.', author: 'Michael B, CTO' }
+    {
+      quote: 'They launched our MVP in 8 weeks and exceeded expectations.',
+      author: 'Sarah K, CEO',
+    },
+    {
+      quote: 'Great team, high quality and excellent communication.',
+      author: 'Michael B, CTO',
+    },
   ];
 
   pricing = [
-    { name: 'Starter', price: '$2.5k', bullets: ['Discovery', 'Prototype', '2 weeks support'] },
-    { name: 'Growth', price: '$8k', bullets: ['Design & Build', '3 months support', 'Analytics'] },
-    { name: 'Scale', price: '$20k', bullets: ['Full product', 'Dedicated team', 'SLA'] }
+    {
+      name: 'Starter',
+      price: '$2.5k',
+      bullets: ['Discovery', 'Prototype', '2 weeks support'],
+    },
+    {
+      name: 'Growth',
+      price: '$8k',
+      bullets: ['Design & Build', '3 months support', 'Analytics'],
+    },
+    {
+      name: 'Scale',
+      price: '$20k',
+      bullets: ['Full product', 'Dedicated team', 'SLA'],
+    },
   ];
 
   newsletterEmail = '';

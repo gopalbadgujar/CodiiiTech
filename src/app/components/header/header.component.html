@@ -1,47 +1,54 @@
-<header class="site-header" [class.scrolled]="isScrolled">
-    <div class="container">
-        <div class="brand">
-            <a routerLink="/" class="logo">
-                <img src="assets/companyLogo_2.png" alt="Company Logo" class="logo-img">
-            </a>
-        </div>
+<header class="header" [class.scrolled]="isScrolled">
+
+  <!-- MAIN HEADER -->
+  <div class="header-container">
+
+    <!-- LOGO -->
+    <a routerLink="/" class="logo">
+      <img src="assets/companyLogo_2.png" alt="Codiiitech Logo">
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/services" routerLinkActive="active">Services</a>
+      <a routerLink="/career" routerLinkActive="active">Career</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </nav>
+
+    <!-- RIGHT SECTION -->
+   <div class="right-section">
+
+  <!-- NEED HELP BUTTON -->
+  <a routerLink="/contact" class="help-btn">
+    💬 Need Help?
+  </a>
+</div>
+
+  </div>
 
 
-        <!-- NEW CENTER SCROLLING TEXT -->
-        <div class="company-ticker">
-            <div class="ticker-track">
+  <!-- PREMIUM COMPANY TICKER -->
+  <div class="company-ticker">
 
-                <span>🚀 Building Modern SaaS Solutions</span>
-                <span>⚡ High Performance Web Development</span>
-                <span>💻 Angular • Cloud • Enterprise Software</span>
-                <span>🌍 Digital Transformation Partner</span>
-                <span>🔐 Secure & Scalable Applications</span>
+      <div class="ticker-track">
 
-            </div>
-        </div>
+        <span>🚀 Building Modern SaaS Solutions</span>
+        <span>⚡ High Performance Web Development</span>
+        <span>💻 Angular • Cloud • Enterprise Software</span>
+        <span>🌍 Digital Transformation Partner</span>
+        <span>🔐 Secure & Scalable Applications</span>
 
-        <nav class="nav">
+        <!-- duplicate for seamless animation -->
+        <span>🚀 Building Modern SaaS Solutions</span>
+        <span>⚡ High Performance Web Development</span>
+        <span>💻 Angular • Cloud • Enterprise Software</span>
+        <span>🌍 Digital Transformation Partner</span>
+        <span>🔐 Secure & Scalable Applications</span>
 
-            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                Home
-            </a>
+      </div>
 
-            <a routerLink="/about" routerLinkActive="active">
-                About Us
-            </a>
+  </div>
 
-            <a routerLink="/services" routerLinkActive="active">
-                Services
-            </a>
-
-            <a routerLink="/career" routerLinkActive="active">
-                Career
-            </a>
-
-            <a routerLink="/contact" routerLinkActive="active">
-                Contact
-            </a>
-
-        </nav>
-    </div>
 </header>

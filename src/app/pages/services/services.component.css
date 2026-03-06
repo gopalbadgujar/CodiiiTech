@@ -1,238 +1,76 @@
-:host {
-  display: block;
-  font-family: Inter, system-ui, sans-serif;
-  color: #0f172a;
-} 
-
-/* Section */
-.services {
-  background:
-    radial-gradient(circle at top left, #7c3aed22, transparent 40%),
-    radial-gradient(circle at bottom right, #0ea5e922, transparent 40%);
-  padding: 4rem 1rem;
+.services{
+padding:120px 20px;
+background:#0b0f19;
+color:white;
 }
 
-/* Container */
-.services-container {
-  max-width: 1200px;
-  margin: auto;
+.services-title{
+text-align:center;
+font-size:42px;
+margin-bottom:70px;
 }
 
-/* Title */
-.services-title {
-  text-align: center;
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 3rem;
+.services-title span{
+background:linear-gradient(90deg,#7c3aed,#0ea5e9);
+-webkit-background-clip:text;
+color:transparent;
 }
 
-.services-title span {
-  background: linear-gradient(90deg, #7c3aed, #0ea5e9);
-  -webkit-background-clip: text;
-  color: transparent;
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+max-width:1200px;
+margin:auto;
 }
 
-/* Grid for service cards */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-  gap: 2.5rem;
-  align-items: stretch;
+.service-card{
+background:rgba(255,255,255,0.05);
+border-radius:16px;
+padding:40px 30px;
+transition:.4s;
+border:1px solid rgba(255,255,255,0.05);
+position:relative;
+overflow:hidden;
 }
 
-/* Service Card - Premium Hover Reveal */
-.service-card {
-  position: relative;
-  background: white;
-  border-radius: 18px;
-  padding: 1rem;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-  min-height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.service-card:hover{
+transform:translateY(-10px);
+background:linear-gradient(145deg,#141e30,#243b55);
+box-shadow:0 30px 60px rgba(124,58,237,.3);
 }
 
-/* Inner Wrapper */
-.service-inner {
-  text-align: center;
-  transition: transform 0.4s ease;
-  margin-bottom: 1rem;
+.service-card h3{
+font-size:20px;
+margin-bottom:10px;
 }
 
-/* Heading Always Visible */
-.service-card h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 0;
-  transition: 0.4s ease;
-  gap: 2px;
+.service-card p{
+color:#9ca3af;
+line-height:1.6;
 }
 
-/* Paragraph Hidden Initially */
-.service-card p {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  transition: all 0.4s ease;
-  color: #fff;
-  line-height: 1.6;
+.more-btn{
+margin-top:20px;
+background:none;
+border:none;
+color:#7c3aed;
+font-weight:600;
+cursor:pointer;
 }
 
-/* Hover Effect */
-.service-card:hover {
-background: linear-gradient(135deg, #141e30, #243b55);
-  color: white;
-  transform: translateY(-10px);
-  box-shadow: 0 30px 70px rgba(124, 58, 237, 0.3);
+@media(max-width:900px){
+
+.services-grid{
+grid-template-columns:1fr 1fr;
 }
 
-/* Heading color change */
-.service-card:hover h3 {
-  color: white;
 }
 
-/* Reveal Paragraph Smoothly */
-.service-card:hover p {
-  opacity: 1;
-  max-height: 350px;
+@media(max-width:600px){
+
+.services-grid{
+grid-template-columns:1fr;
 }
 
-/* Premium Glow Border Effect */
-.service-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  padding: 2px;
-  background: linear-gradient(90deg, #7c3aed, #0ea5e9);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box,
-                linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: 0.4s;
-}
-
-.service-card:hover::before {
-  opacity: 1;
-}
-
-
-/* =========================
-   ULTRA PREMIUM MORE BUTTON
-   ========================= */
-
-.more-btn {
-  position: absolute;
-  bottom: 15px;
-  right: 18px;
-
-  padding: 10px 18px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  color: #fff;
-  cursor: pointer;
-
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(20px) scale(0.9);
-  transition: all 0.4s ease;
-
-  box-shadow: 0 0 0 rgba(124, 58, 237, 0);
-}
-
-/* Show on hover */
-.service-card:hover .more-btn {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* Hover effect */
-.more-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
-}
-
-/* Gradient animated border */
-.more-btn::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: 30px;
-  background: linear-gradient(
-    120deg,
-    #7c3aed,
-    #0ea5e9,
-    #7c3aed
-  );
-  background-size: 300% 300%;
-  z-index: -1;
-  animation: borderMove 4s linear infinite;
-  opacity: 0.8;
-}
-
-/* Shine sweep animation */
-.more-btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.6),
-    transparent
-  );
-  transform: skewX(-20deg);
-}
-
-/* Shine on hover */
-.more-btn:hover::after {
-  animation: shine 0.8s ease forwards;
-}
-
-/* Keyframes */
-
-@keyframes borderMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes shine {
-  0% { left: -75%; }
-  100% { left: 125%; }
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet */
-  }
-}
-
-@media (max-width: 640px) {
-  .services-grid {
-    grid-template-columns: 1fr; /* 1 per row on mobile */
-  }
-  .service-card {
-    text-align: center;
-  }
 }

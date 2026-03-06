@@ -1,74 +1,109 @@
 <footer class="site-footer">
-    <div class="container">
-        <div class="cols">
-            <div class="col about">
-                <h3>CodiiTech</h3>
-                <p>We build modern web and mobile experiences. Software development, Web design, Mobile apps. </p>
-            </div>
-            <div class="col">
-                <h4>Services</h4>
-                <ul>
-                    <li><a routerLink="/services">Web & App Development</a></li>
-                    <li><a routerLink="/services">UI/UX Design</a></li>
-                    <li><a routerLink="/services">Custom Software</a></li>
-                    <li><a routerLink="/services">Business Process Outsourcing </a></li>
-                </ul>
-            </div>
-            <div class="col">
-                <h4>Company</h4>
-                <ul>
-                    <li><a routerLink="/about">About Us</a></li>
-                    <li><a routerLink="/privacy">Privacy & Policy</a></li>
-                    <li><a routerLink="/contact">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="col contact">
-                <h4>Contact Us</h4>
-                <!-- <p>Email: <a href="mailto:hello&#64;codiiitech.example">hello&#64;codiiitech.example</a></p>
-                <p>Phone: +1 (555) 123-4567</p> -->
-                <div class="socials">
 
-                    <!-- Instagram -->
-                    <a routerLink="/comming-soon" class="social-icon instagram" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                        <span>Instagram</span>
-                    </a>
+  <div class="footer-container">
 
-                    <!-- LinkedIn -->
-                    <a routerLink="/comming-soon" class="social-icon linkedin" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                        <span>LinkedIn</span>
-                    </a>
+    <!-- TOP GRID -->
+    <div class="footer-grid">
 
-                    <!-- Email -->
-                    <a routerLink="/comming-soon" class="social-icon email" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                        <span>Email</span>
-                    </a>
+      <!-- COMPANY -->
+      <div class="footer-col company">
 
-                </div>
-            </div>
-        </div>
-        <!-- Footer Actions -->
-        <div class="footer-actions">
-            <button class="privacy-toggle" (click)="togglePrivacy()">
-                Privacy & Policy
-                <!-- <span class="arrow" [class.open]="showPrivacy"></span> -->
-            </button>
-        </div>
-
-        <!-- Inline Privacy Preview -->
-        <div class="privacy-dropdown" *ngIf="showPrivacy">
-            <app-privacy [isPreview]="true"></app-privacy>
-        </div>
-
-
-        <div class="copyright">© {{ currentYear }} CodiiiTech — All rights reserved</div>
-    </div>
-
-    <div class="logo">
-        <a routerLink="/" (click)="scrollToTop()">
-            <img src="assets/companyLogo_2.png" alt="Company Logo" class="logo-img">
+        <a routerLink="/" (click)="scrollToTop()" class="footer-logo">
+          <img src="assets/companyLogo_2.png" alt="CodiiTech">
         </a>
+
+        <p>
+          CodiiiTech builds high-performance digital products.
+          We specialize in modern web apps, scalable cloud systems
+          and enterprise-grade software solutions.
+        </p>
+
+        <div class="footer-badge">
+          🚀 Building Future-Ready Software
+        </div>
+
+      </div>
+
+      <!-- SERVICES -->
+      <div class="footer-col">
+
+        <h4>Services</h4>
+
+        <ul>
+          <li><a routerLink="/services">Web Development</a></li>
+          <li><a routerLink="/services">Mobile Apps</a></li>
+          <li><a routerLink="/services">UI / UX Design</a></li>
+          <li><a routerLink="/services">Custom Software</a></li>
+          <li><a routerLink="/services">Cloud Solutions</a></li>
+          <li><a routerLink="/services">Customer Support</a></li>
+        </ul>
+
+      </div>
+
+      <!-- COMPANY -->
+      <div class="footer-col">
+
+        <h4>Company</h4>
+
+        <ul>
+          <li><a routerLink="/about">About Us</a></li>
+          <li><a routerLink="/career">Careers</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a (click)="togglePrivacy()">Privacy Policy</a></li>
+        </ul>
+
+      </div>
+
+      <!-- CONTACT -->
+      <div class="footer-col contact">
+
+        <h4>Contact</h4>
+
+        <!-- <p>📍 Pune, Maharashtra, India</p>
+        <p>☎ +91 7020215508</p>
+        <p>✉ hello&#64;codiiitech.com</p> -->
+
+        <!-- SOCIALS -->
+        <div class="socials">
+
+          <a routerLink="/comming-soon" class="social instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a routerLink="/comming-soon" class="social linkedin">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+          <a routerLink="/comming-soon" class="social email">
+            <i class="fas fa-envelope"></i>
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
+
+
+    <!-- PRIVACY DROPDOWN -->
+    <div class="privacy-dropdown" *ngIf="showPrivacy">
+      <app-privacy [isPreview]="true"></app-privacy>
+    </div>
+
+
+    <!-- BOTTOM BAR -->
+    <div class="footer-bottom">
+
+      <span>
+        © {{currentYear}} CodiiiTech Pvt Ltd. All rights reserved
+      </span>
+
+      <button class="back-top" (click)="scrollToTop()">
+        ↑ Back to Top
+      </button>
+
+    </div>
+
+  </div>
+
 </footer>
