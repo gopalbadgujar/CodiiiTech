@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { CommonModule, ViewportScroller } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { ServicesComponent } from '../services/services.component';
@@ -27,6 +27,8 @@ export class HomeComponent {
   constructor(
     private title: Title,
     private meta: Meta,
+    private router: Router,
+  private scroller: ViewportScroller
   ) {}
 
   ngOnInit() {}
@@ -143,7 +145,7 @@ export class HomeComponent {
     {
       name: 'Shopify Plus App',
       tag: 'E-Commerce',
-      img: '/assets/companyLogo_1.png',
+      img: '/assets/companyLogo_2.png',
     },
     // { name: 'FinTech Dashboard', tag: 'SaaS', img: '/assets/companyLogo_1.png' },
     // { name: 'Healthcare App', tag: 'Mobile', img: '/assets/companyLogo_1.png' }
@@ -189,4 +191,37 @@ export class HomeComponent {
     alert('Thanks — we’ll be in touch!');
     this.newsletterEmail = '';
   }
+
+
+  // ----------------------------------------------------------------------------------------------
+  goToSection(section: string) {
+
+  if (this.router.url === '/') {
+
+    this.scroll(section);
+
+  } else {
+
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        this.scroll(section);
+      }, 200);
+    });
+
+  }
+
+}
+
+scroll(section: string) {
+
+  const element = document.getElementById(section);
+
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+
+}
 }

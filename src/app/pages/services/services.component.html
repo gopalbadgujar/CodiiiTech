@@ -1,18 +1,47 @@
 <section class="services">
+
   <div class="services-container">
-    <h1 class="services-title">Our <span>Services</span></h1>
+
+    <h1 class="services-title">
+      Our <span>Services</span>
+    </h1>
+
+    <p class="services-subtitle">
+      Innovative technology solutions designed to scale your business and accelerate digital transformation.
+    </p>
 
     <div class="services-grid">
-      <article class="service-card" *ngFor="let service of services">
+
+      <article class="service-card" *ngFor="let service of services" (click)="toggleService(service)">
+
         <div class="service-inner">
+
           <h3>{{ service.title }}</h3>
-          <p>{{ service.description }}</p>
+
+          <!-- Short description -->
+          <p *ngIf="!service.expanded" class="short">
+            {{ service.description | slice:0:90 }}...
+            <button class="more-toggle" (click)="$event.stopPropagation(); toggleService(service)">
+              More
+            </button>
+          </p>
+
+          <!-- Full description -->
+          <p *ngIf="service.expanded" class="full">
+            {{ service.description }}
+          </p>
+
         </div>
-        <!-- More Button -->
-        <button class="more-btn" (click)="goToService(service.slug); $event.stopPropagation()">
-          More →
+
+        <!-- Button only visible after expand -->
+        <button *ngIf="service.expanded" class="more-btn" (click)="$event.stopPropagation(); goToService(service.slug)">
+          Explore Service →
         </button>
+
       </article>
+
     </div>
+
   </div>
+
 </section>

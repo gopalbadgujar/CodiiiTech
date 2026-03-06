@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero" id="home">
   <div class="container">
     <!-- HERO -->
     <div class="hero-inner">
@@ -16,7 +16,7 @@
         </p>
 
         <div class="hero-actions">
-          <a routerLink="/services" class="btn primary">Start Your Project</a>
+          <a (click)="goToSection('services')" class="btn primary">Start Your Project</a>
           <!-- <a routerLink="/portfolio" class="btn ghost">View Portfolio</a> -->
         </div>
 
@@ -47,7 +47,7 @@
     </div>
 
     <!-- FEATURES -->
-    <section class="features">
+    <section class="features" id="features">
       <h2>Why Businesses Choose Us</h2>
 
       <div class="features-grid">
@@ -123,7 +123,7 @@
     </section>
 
     <!-- PORTFOLIO -->
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
       <h2>Our Work</h2>
 
       <div class="portfolio-grid">
@@ -171,13 +171,19 @@
 
     <!-- ---------------------------------------------------------------------------------------------------------------- -->
     <!-- <app-portfolio></app-portfolio> -->
-    <app-services></app-services>
-    <app-about></app-about>
-    <app-career></app-career>
+    <section id="services">
+      <app-services></app-services>
+    </section>
+    <section id="about">
+      <app-about></app-about>
+    </section>
+    <section id="career">
+      <app-career></app-career>
+    </section>
     <!-- ---------------------------------------------------------------------------------------------------------------- -->
 
     <!-- CTA -->
-    <section class="cta">
+    <section class="cta" id="contact">
       <h2>Let’s Build Something Great</h2>
       <p>Tell us about your idea and we’ll help you launch it.</p>
       <a routerLink="/contact" class="btn primary">Contact Us</a>
