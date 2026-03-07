@@ -141,7 +141,7 @@
 }
 
 .hero-stats span {
-      justify-content: center;
+  justify-content: center;
   display: block;
   color: var(--text-muted);
   font-size: 14px;
