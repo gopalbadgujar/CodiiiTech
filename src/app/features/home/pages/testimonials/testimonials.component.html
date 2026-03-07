@@ -1,0 +1,97 @@
+<section class="testimonials-section">
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-badge">Client Testimonials</span>
+      <h2>What <span>Our Clients Say</span></h2>
+      <p>Real feedback from companies we've worked with</p>
+    </div>
+
+    <div class="testimonials-carousel">
+
+      <div class="carousel-container">
+
+        <div
+          class="testimonial-card"
+          *ngFor="let t of testimonials; let i = index"
+          [class.active]="i === currentIndex"
+        >
+
+          <div class="stars">
+            <span
+              class="star"
+              *ngFor="let star of [1,2,3,4,5]; let s = index"
+              [class.filled]="s < t.rating"
+              [class.empty]="s >= t.rating"
+            >★</span>
+          </div>
+
+          <p class="quote">"{{t.quote}}"</p>
+
+          <div class="client-info">
+
+            <svg
+              class="client-avatar"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+                [attr.fill]="t.color"
+              ></circle>
+
+              <text
+                x="50"
+                y="55"
+                text-anchor="middle"
+                font-size="50"
+                fill="white"
+                font-weight="bold"
+              >
+                {{t.initials}}
+              </text>
+            </svg>
+
+            <div class="client-details">
+              <h4>{{t.name}}</h4>
+              <p class="role">{{t.role}}</p>
+              <span class="project-type">{{t.project}}</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+
+      <div class="carousel-controls">
+
+        <button class="control-btn" (click)="prev()">
+          ← Prev
+        </button>
+
+        <div class="dots">
+          <span
+            class="dot"
+            *ngFor="let t of testimonials; let i = index"
+            [class.active]="i === currentIndex"
+            (click)="goTo(i)"
+          ></span>
+        </div>
+
+        <button class="control-btn" (click)="next()">
+          Next →
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

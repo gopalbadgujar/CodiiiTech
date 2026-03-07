@@ -1,0 +1,61 @@
+<header class="header" [class.scrolled]="isScrolled">
+
+  <!-- MAIN HEADER -->
+  <div class="header-container">
+
+    <!-- LOGO -->
+    <a routerLink="/" class="logo">
+      <img src="assets/companyLogo_2.png" alt="Codiiitech Logo">
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+
+      <a (click)="goToSection('home')">Home</a>
+
+      <a (click)="goToSection('about')">About</a>
+
+      <a (click)="goToSection('services')">Services</a>
+
+      <!-- <a (click)="goToSection('career')">Career</a> -->
+      <a (click)="goToSection('testimonials')">Testimonials</a>
+
+      <a (click)="goToSection('contact')">Contact</a>
+
+    </nav>
+
+    <!-- RIGHT SECTION -->
+    <div class="right-section">
+
+      <!-- NEED HELP BUTTON -->
+      <a routerLink="/contact" class="help-btn">
+        💬 Need Help?
+      </a>
+    </div>
+
+  </div>
+
+
+  <!-- PREMIUM COMPANY TICKER -->
+  <div class="company-ticker">
+
+    <div class="ticker-track">
+
+      <span>🚀 Building Modern SaaS Solutions</span>
+      <span>⚡ High Performance Web Development</span>
+      <span>💻 Angular • Cloud • Enterprise Software</span>
+      <span>🌍 Digital Transformation Partner</span>
+      <span>🔐 Secure & Scalable Applications</span>
+
+      <!-- duplicate for seamless animation -->
+      <span>🚀 Building Modern SaaS Solutions</span>
+      <span>⚡ High Performance Web Development</span>
+      <span>💻 Angular • Cloud • Enterprise Software</span>
+      <span>🌍 Digital Transformation Partner</span>
+      <span>🔐 Secure & Scalable Applications</span>
+
+    </div>
+
+  </div>
+
+</header>

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { NotificationComponent } from './shared/notification/notification.component';
+import { NotificationComponent } from './shared/componenents/notification/notification.component';
 import { filter } from 'rxjs';
+import { HeaderComponent } from './shared/componenents/header/header.component';
+import { FooterComponent } from './shared/componenents/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ import { filter } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CodiiTech';
+  title = 'CodiiiTech';
 
    constructor(private router: Router) {
     // Scroll to top on every route change
