@@ -31,7 +31,7 @@
 
 .header-container {
   max-width: 1400px;
-  margin: auto;
+  /* margin: auto; */
 
   display: flex;
   align-items: center;
@@ -44,7 +44,9 @@
 /* LOGO */
 
 .logo img {
-  height: 44px;
+  height: 150px;
+  width: 200px;
+  padding-top: 10px;
   transition: 0.35s;
 }
 
@@ -273,7 +275,8 @@
   }
 
   .logo img{
-    height:40px;
+    height:145px;
+    width: 200px;
   }
 
   .nav{
@@ -304,8 +307,13 @@
     padding:0 18px;
   }
 
+  a.logo{
+    padding: 0px;
+    margin: -10px;
+  }
   .logo img{
-    height:38px;
+    height:140px;
+    width: 190px;
   }
 
   .nav{
@@ -339,8 +347,14 @@
     height:60px;
   }
 
+  a.logo{
+    padding: 0px;
+    margin: -20px;
+  }
   .logo img{
-    height:34px;
+    height:135px;
+      width: 180px;
+      padding-top: 10px;
   }
 
   .nav{
@@ -375,12 +389,17 @@
 @media (max-width: 576px){
 
   .header-container{
-    padding:0 14px;
+    padding:0px;
     height:56px;
   }
 
+  a.logo{
+    padding: 0px;
+    margin: -10px;
+  }
   .logo img{
-    height:30px;
+    height:120px;
+    width: 150px;
   }
 
   .nav{
@@ -409,7 +428,7 @@
 
     .help-btn{
     font-size:10px;
-    padding:5px 9px;
+    padding:5px 6px;
     border-radius:16px;
   }
 
@@ -419,12 +438,12 @@
 @media (max-width: 480px){
 
   .header-container{
-    padding:0 8px;
     height:56px;
   }
 
   .logo img{
-    height:28px;
+    height:115px;
+    width: 140px;  
   }
 
   .nav{
@@ -453,7 +472,7 @@
 
     .help-btn{
     font-size:9px;
-    padding:5px 9px;
+    padding:5px 6px;
     border-radius:16px;
   }
 
@@ -462,12 +481,13 @@
 @media (max-width: 420px){
 
   .header-container{
-    padding:0 5px;
+    padding:0px;
     height:56px;
   }
 
   .logo img{
-    height:26px;
+    height:110px;
+    width: 120px;  
   }
 
   .nav{
@@ -496,26 +516,27 @@
   }
 
     .help-btn{
+    align-items: center;
     font-size:9px;
-    padding:5px 7px;
+    padding:4px;
     border-radius:16px;
   }
 
 }
 /* ULTRA SMALL DEVICES */
-@media (max-width:320px){
+@media (max-width:390px){
 
   .header-container{
-    padding:0 2px;
     height:56px;
   }
 
   .logo img{
-    height:26px;
+    height: 100px;
+    width: 110px;
   }
 
   .nav{
-    gap:8px;
+    gap:6px;
     overflow-x:auto;
     white-space:nowrap;
     scrollbar-width:none;
@@ -541,7 +562,7 @@
 
     .help-btn{
     font-size:9px;
-    padding:4px 6px;
+    padding:4px 5px;
     border-radius:16px;
   }
 
